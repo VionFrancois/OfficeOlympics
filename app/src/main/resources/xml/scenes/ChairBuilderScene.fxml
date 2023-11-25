@@ -5,7 +5,7 @@
 <?import javafx.scene.text.*?>
 
 <AnchorPane prefHeight="720.0" prefWidth="1280.0" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="officeolympics.front.controllers.ChairBuilderSceneController">
-   <AnchorPane fx:id="anchorPane" prefHeight="200.0" prefWidth="200.0" style="-fx-border-color: black; -fx-border-width: 2;" AnchorPane.bottomAnchor="25.0" AnchorPane.leftAnchor="25.0" AnchorPane.rightAnchor="25.0" AnchorPane.topAnchor="25.0">
+   <AnchorPane fx:id="anchorPane" prefHeight="200.0" prefWidth="200.0" style="-fx-border-color: black; -fx-border-width: 2;" AnchorPane.bottomAnchor="5.0" AnchorPane.leftAnchor="5.0" AnchorPane.rightAnchor="5.0" AnchorPane.topAnchor="5.0">
       <children>
          <Pane fx:id="draggablePane1">
             <ImageView fx:id="imageView1" pickOnBounds="true" preserveRatio="true">
@@ -49,7 +49,7 @@
          </Pane>
       </children>
    </AnchorPane>
-   <BorderPane onMouseClicked="#dialogOnMouseClicked" id="draggable-dialog" fx:id="draggable_dialog" disable="true" prefHeight="200.0" prefWidth="200.0" style="-fx-border-color: black; -fx-border-width: 1; -fx-border-radius: 10; -fx-background-color: rgb(255, 255, 255);" visible="false" AnchorPane.bottomAnchor="40.0" AnchorPane.leftAnchor="50.0" AnchorPane.rightAnchor="50.0">
+   <BorderPane id="draggable-dialog" fx:id="draggable_dialog" disable="true" onMouseClicked="#dialogOnMouseClicked" prefHeight="200.0" prefWidth="200.0" style="-fx-border-color: black; -fx-border-width: 1; -fx-border-radius: 10; -fx-background-color: rgb(255, 255, 255);" visible="false" AnchorPane.bottomAnchor="40.0" AnchorPane.leftAnchor="50.0" AnchorPane.rightAnchor="50.0">
       <center>
          <Text id="text-cinematic" fx:id="dialog" strokeType="OUTSIDE" strokeWidth="0.0" text="Text" wrappingWidth="1100.0" BorderPane.alignment="CENTER">
             <font>
