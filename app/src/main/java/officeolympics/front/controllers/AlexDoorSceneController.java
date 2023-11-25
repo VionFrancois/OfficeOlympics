@@ -142,6 +142,12 @@ public class AlexDoorSceneController extends Controller {
             draggable_dialog.setVisible(true);
             draggable_dialog.setDisable(false);
             draggable_dialog.toFront();
+            if (TextCinematicController.isRunning()) {
+                TextCinematicController.stop();
+                TextCinematicController.setDelayBefore(0);
+            } else {
+                TextCinematicController.setDelayBefore(200);
+            }
             TextCinematicController.play(dialogList.get(dialogIndex), dialog);
             dialogIndex += 1;
         }
