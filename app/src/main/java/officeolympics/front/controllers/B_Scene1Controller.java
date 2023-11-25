@@ -46,7 +46,7 @@ public class B_Scene1Controller extends Controller {
 
     public void handlePaneMouseClicked(MouseEvent mouseEvent) {
         if(index >= NUMBER_OF_PAGES){
-            this.pageFlip((Group) Scenes.B_Scene1.getRoot(), Scenes.ChairBuilderScene);
+            this.pageFlip((Group) Scenes.B_Scene1.getRoot(), Scenes.AlexDoorScene);
             return;
         }
         // If another text is already being displayed, we stop it and display the next one

@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.text.Text?>
+<?import javafx.scene.text.Font?>
+<AnchorPane xmlns="http://javafx.com/javafx"
+            xmlns:fx="http://javafx.com/fxml"
+            fx:controller="officeolympics.front.controllers.AlexDoorSceneController"
+            prefHeight="720.0" prefWidth="1280.0"
+            style="-fx-background-color: white">
+    <AnchorPane fx:id="anchorPane" prefHeight="200.0" prefWidth="200.0" style="-fx-border-color: black; -fx-border-width: 2;" AnchorPane.bottomAnchor="5.0" AnchorPane.leftAnchor="5.0" AnchorPane.rightAnchor="5.0" AnchorPane.topAnchor="5.0">
+        <children>
+            <Pane fx:id="draggablePane1">
+                <ImageView fx:id="imageView1" pickOnBounds="true" preserveRatio="true">
+                    <Image url="@/images/meubles/porte_placard.png" />
+                </ImageView>
+            </Pane>
+            <Pane fx:id="draggablePane2" layoutX="500.0" layoutY="200.0">
+                <ImageView fx:id="imageView2" pickOnBounds="true" preserveRatio="true">
+                    <Image url="@/images/meubles/placard_glow.png" />
+                </ImageView>
+            </Pane>
+        </children>
+    </AnchorPane>
+    <BorderPane id="draggable-dialog" fx:id="draggable_dialog" disable="true" onMouseClicked="#dialogOnMouseClicked" prefHeight="200.0" prefWidth="200.0" style="-fx-border-color: black; -fx-border-width: 1; -fx-border-radius: 10; -fx-background-color: rgb(255, 255, 255);" visible="false" AnchorPane.bottomAnchor="40.0" AnchorPane.leftAnchor="50.0" AnchorPane.rightAnchor="50.0">
+        <center>
+            <Text id="text-cinematic" fx:id="dialog" strokeType="OUTSIDE" strokeWidth="0.0" text="Text" wrappingWidth="1100.0" BorderPane.alignment="CENTER">
+                <font>
+                    <Font name="IKEASans-Heavy" size="36.0" />
+                </font>
+            </Text>
+        </center>
+    </BorderPane>
+
+</AnchorPane>

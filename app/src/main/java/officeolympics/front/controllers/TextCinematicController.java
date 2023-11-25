@@ -15,7 +15,7 @@ import java.util.concurrent.locks.ReentrantLock;
  */
 public class TextCinematicController extends Controller{
 
-    private static final int TEXT_SPEED = 50;
+    private static final int TEXT_SPEED = 35;
 
     private static final int TEXT_DELAY = 500;
 
@@ -63,6 +63,8 @@ public class TextCinematicController extends Controller{
                 return;
             }
             for (int i = 0; i < textToDisplay.length(); i++) {
+                String finalTextToDisplay = textToDisplay.substring(0, i + 1);
+                text.setText(finalTextToDisplay);
                 try {
                     if (textToDisplay.charAt(i) == '\n' || textToDisplay.charAt(i) == ',' || textToDisplay.charAt(i) == '.') {
                         Thread.sleep(TEXT_DELAY);
@@ -70,8 +72,6 @@ public class TextCinematicController extends Controller{
                 } catch (InterruptedException e) {
                     return;
                 }
-                String finalTextToDisplay = textToDisplay.substring(0, i + 1);
-                text.setText(finalTextToDisplay);
             }
             try {
                 Thread.sleep(TEXT_DELAY_AFTER);

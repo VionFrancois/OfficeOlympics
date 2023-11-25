@@ -20,6 +20,7 @@ public class Scenes {
             EndScreenScene,
             B_Scene1,
             Page1Scene,
+            AlexDoorScene,
             TableBuilderScene;
 
     public static Image getImage(String name) {
