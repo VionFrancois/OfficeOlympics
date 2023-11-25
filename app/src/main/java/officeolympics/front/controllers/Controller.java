@@ -1,6 +1,7 @@
 package officeolympics.front.controllers;
 
 import javafx.scene.Group;
+import javafx.scene.Scene;
 import officeolympics.Main;
 import officeolympics.front.animation.FadeInTransition;
 import officeolympics.front.animation.pageflip.FlipTransition;
@@ -204,8 +205,8 @@ public class Controller {
         sleepAndFadeOutFadeThread.start(fadeOutDuration, sleepDuration + fadeInDuration, node);
     }
 
-    public void pageFlip(Group node) {
-        FlipThread flipThread = new FlipThread(node, Main.WIDTH, Main.HEIGHT);
+    public void pageFlip(Group node, Scene target) {
+        FlipThread flipThread = new FlipThread(node, Main.WIDTH, Main.HEIGHT, target);
         flipThread.start();
     }
 }

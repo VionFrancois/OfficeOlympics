@@ -2,16 +2,14 @@ package officeolympics.front.animation.pageflip;
 
 import javafx.animation.*;
 import javafx.geometry.Point3D;
-import javafx.scene.Group;
-import javafx.scene.Parent;
-import javafx.scene.SnapshotParameters;
+import javafx.scene.*;
+import javafx.scene.layout.StackPane;
 import javafx.scene.paint.Color;
 import javafx.scene.paint.CycleMethod;
 import javafx.scene.paint.LinearGradient;
 import javafx.scene.shape.Rectangle;
 import officeolympics.Main;
 import officeolympics.front.animation.threads.FlipThread;
-import javafx.scene.Node;
 import javafx.util.Duration;
 import javafx.scene.image.ImageView;
 import org.checkerframework.checker.units.qual.C;
@@ -34,8 +32,8 @@ public class FlipTransition {
      * @param group    the group on which the transition should be applied
      * @param duration the duration of the transition
      */
-    public static void play(Group group, Duration duration) {
-        FlipTransition._playFromStartOn(group, duration);
+    public static void play(Group group, Duration duration, Scene target) {
+        FlipTransition._playFromStartOn(group, duration, target);
     }
 
     /**
@@ -45,7 +43,9 @@ public class FlipTransition {
      * @param group    the group on which the transition should be applied
      * @param duration the duration of the transition
      */
-    private static void _playFromStartOn(Group group, Duration duration) {
+    private static void _playFromStartOn(Group group, Duration duration, Scene target) {
+        ImageView targetImage = new ImageView(target.getRoot().snapshot(new SnapshotParameters(), null));
+
         int width = Main.WIDTH;
         int height = Main.HEIGHT;
 
@@ -115,12 +115,17 @@ public class FlipTransition {
                 clipTranslation2,
                 shadowScale, shadowTranslate, shadowTransition);
 
+        // Add the target image behind the flip transition
+        group.getChildren().add(targetImage);
+        targetImage.toBack();
+
         globalTransition.setOnFinished(event -> {
             group.getChildren().remove(pageShadow);
             group.getChildren().remove(flipGroup);
             node.setClip(null);
             group.getChildren().remove(node);
             group.getChildren().add(node);
+            Main.setScene(target);
         });
 
         globalTransition.play();

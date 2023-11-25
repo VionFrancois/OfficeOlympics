@@ -9,4 +9,10 @@ import javafx.scene.Scene;
  */
 public class Scenes {
     public static Scene MainScreenScene;
+
+    public static Scene MainScreen2Scene;
+
+    public static Scene YearsLaterScene;
+
+    public static Scene EndScreenScene;
 }
