@@ -23,7 +23,7 @@ public class B_Scene1Controller extends Controller {
     private final List<String> images = List.of(
             "leaderboard_dialog.png",
             "handshake_dialog.png",
-            "leaderboard_dialog.png"
+            "employe.png"
     );
 
     @FXML

@@ -19,7 +19,7 @@ public class MobelComponent {
         this.id = id;
         this.currentLocation = currentLocation;
         this.targetLocations = targetLocations;
-        System.out.println("building for current loc = " + currentLocation + " and target loc = " + targetLocation);
+        System.out.println("building for current loc = " + currentLocation + " and target loc = " + targetLocations);
     }
 
     public boolean isOnTarget() {
