@@ -79,16 +79,13 @@ public class ChairBuilderSceneController extends Controller {
         roulettesTargetLocations.add(new MobelComponentLocation(719, 666));
         roulettesTargetLocations.add(new MobelComponentLocation(809, 627));
 
-        draggablePane2.setLayoutX(436);
-        draggablePane2.setLayoutY(482);
-
         MobelComponent mobelComponent1 = new MobelComponent(0,
                 new MobelComponentLocation(draggablePane1.getLayoutX(), draggablePane1.getLayoutY()),
                 new MobelComponentLocation(318, -7));
         mobelComponents.add(mobelComponent1);
         MobelComponent mobelComponent2 = new MobelComponent(1,
                 new MobelComponentLocation(draggablePane2.getLayoutX(), draggablePane2.getLayoutY()),
-                new MobelComponentLocation(436, 482));
+                new MobelComponentLocation(434, 480));
         mobelComponents.add(mobelComponent2);
         MobelComponent mobelComponent3 = new MobelComponent(2,
                 new MobelComponentLocation(draggablePane3.getLayoutX(), draggablePane3.getLayoutY()),
@@ -186,7 +183,16 @@ public class ChairBuilderSceneController extends Controller {
         System.out.println("=======");
         System.out.println(mobelLayout.isLayoutFilled());
         System.out.println("=======");
+        checkIsOnTargetByIndex(index);
+        if (mobelLayout.isLayoutFilled()) {
+            // TODO : show dialog
+        }
 
+        // Put the immovable piece to front at all time
+        draggablePane2.toFront();
+    }
+
+    private void checkIsOnTargetByIndex(int index) {
         if (mobelLayout.getMobelComponents().get(index).isOnTarget()) {
 
             if (!isDialogOpen && !wasDialogOpen){
@@ -290,12 +296,6 @@ public class ChairBuilderSceneController extends Controller {
                 }
             }
         }
-        if (mobelLayout.isLayoutFilled()) {
-            anchorPane.setStyle("-fx-background-color: rgba(0, 150, 0, 0.2);");
-        }
-
-        // Put the immovable piece to front at all time
-        draggablePane2.toFront();
     }
 
     @FXML
