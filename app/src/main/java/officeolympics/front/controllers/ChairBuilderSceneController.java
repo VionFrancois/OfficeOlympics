@@ -427,36 +427,7 @@ public class ChairBuilderSceneController extends Controller {
     @FXML
     private void cheatCode(MouseEvent event) {
         if (event.getButton().toString().equals("MIDDLE")) {
-            draggablePane1.setLayoutX(mobelComponent1.getTargetLocation().getX());
-            draggablePane1.setLayoutY(mobelComponent1.getTargetLocation().getY());
-            draggablePane2.setLayoutX(mobelComponent2.getTargetLocation().getX());
-            draggablePane2.setLayoutY(mobelComponent2.getTargetLocation().getY());
-            draggablePane3.setLayoutX(mobelComponent3.getTargetLocation().getX());
-            draggablePane3.setLayoutY(mobelComponent3.getTargetLocation().getY());
-            draggablePane4.setLayoutX(mobelComponent4.getTargetLocation().getX());
-            draggablePane4.setLayoutY(mobelComponent4.getTargetLocation().getY());
-            draggablePane5.setLayoutX(mobelComponent5.getTargetLocations().get(0).getX());
-            draggablePane5.setLayoutY(mobelComponent5.getTargetLocations().get(0).getY());
-            draggablePane6.setLayoutX(mobelComponent6.getTargetLocations().get(1).getX());
-            draggablePane6.setLayoutY(mobelComponent6.getTargetLocations().get(1).getY());
-            draggablePane7.setLayoutX(mobelComponent7.getTargetLocations().get(2).getX());
-            draggablePane7.setLayoutY(mobelComponent7.getTargetLocations().get(2).getY());
-            draggablePane8.setLayoutX(mobelComponent8.getTargetLocations().get(3).getX());
-            draggablePane8.setLayoutY(mobelComponent8.getTargetLocations().get(3).getY());
-
-            for (int i = 0; i < 8; i++) {
-                checkIsOnTargetByIndex(i);
-            }
-
-            System.out.println(mobelLayout.isLayoutFilled());
-            if (mobelLayout.isLayoutFilled()) {
-                draggable_dialog.setVisible(true);
-                draggable_dialog.setDisable(false);
-                draggable_dialog.toFront();
-                TextCinematicController.play(dialogList.get(dialogIndex), dialog);
-                dialogIndex += 1;
-                endDialog = true;
-            }
+            this.pageFlip((Group) Scenes.ChairBuilderScene.getRoot(), Scenes.TableBuilderScene);
         }
     }
 }
