@@ -1,6 +1,7 @@
 package officeolympics.front.controllers;
 
 import javafx.fxml.FXML;
+import javafx.scene.Group;
 import javafx.scene.Node;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
@@ -400,6 +401,7 @@ public class ChairBuilderSceneController extends Controller {
     public void dialogOnMouseClicked(MouseEvent mouseEvent) {
 
         if (dialogIndex >= dialogList.size()){
+            this.pageFlip((Group) Scenes.ChairBuilderScene.getRoot(), Scenes.TableBuilderScene);
             return;
         }
 
