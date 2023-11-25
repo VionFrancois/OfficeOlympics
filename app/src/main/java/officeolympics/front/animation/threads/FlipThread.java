@@ -8,12 +8,15 @@ import javafx.scene.Scene;
 import javafx.util.Duration;
 import officeolympics.front.animation.pageflip.FlipTransition;
 
+import java.util.concurrent.locks.ReentrantLock;
+
 public class FlipThread extends Thread {
 
     private static final int FLIP_DURATION = 1000;
     private int width, height;
     private Group node;
     private Scene target;
+    private static final ReentrantLock lock = new ReentrantLock();
 
     public FlipThread(Group group, int width, int height, Scene target) {
         this.node = group;
@@ -24,9 +27,11 @@ public class FlipThread extends Thread {
 
     @Override
     public void run() {
+        lock.lock();
         Platform.runLater(() -> {
             FlipTransition.play(this.node, Duration.millis(FLIP_DURATION), this.target);
         });
+        lock.unlock();
     }
 
 }

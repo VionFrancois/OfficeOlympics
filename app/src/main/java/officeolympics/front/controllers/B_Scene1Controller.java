@@ -4,14 +4,10 @@ import javafx.fxml.FXML;
 import javafx.scene.Group;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.text.Text;
-import javafx.scene.web.WebView;
-import officeolympics.Main;
 import officeolympics.front.scenes.Scenes;
 
-import javax.swing.text.html.ImageView;
+import javafx.scene.image.ImageView;
 import java.util.List;
-import java.util.Objects;
-import java.util.concurrent.locks.Lock;
 
 public class B_Scene1Controller extends Controller {
 
@@ -26,8 +22,8 @@ public class B_Scene1Controller extends Controller {
 
     private final List<String> images = List.of(
             "leaderboard_dialog.png",
-            ".png",
-            ".png"
+            "handshake_dialog.png",
+            "leaderboard_dialog.png"
     );
 
     @FXML
@@ -35,16 +31,21 @@ public class B_Scene1Controller extends Controller {
 
     private int index = 0;
 
+    private static final int NUMBER_OF_PAGES = 3;
+
     @FXML
     void initialize(){
         if(this.paragraph.getText() == null || this.paragraph.getText().isEmpty()){
             this.paragraph.setText(this.texts.get(index));
         }
+        else if(this.image.getImage() == null){
+            this.image.setImage(Scenes.getImage(this.images.get(index)));
+        }
         index += 1;
     }
 
     public void handlePaneMouseClicked(MouseEvent mouseEvent) {
-        if(index >= this.texts.size()){
+        if(index >= NUMBER_OF_PAGES){
             this.pageFlip((Group) Scenes.B_Scene1.getRoot(), Scenes.DragAndDropScene);
             return;
         }
@@ -57,6 +58,7 @@ public class B_Scene1Controller extends Controller {
             TextCinematicController.setDelayBefore(200);
         }
         TextCinematicController.play(this.texts.get(index), this.paragraph);
+        this.image.setImage(Scenes.getImage(this.images.get(index)));
         index += 1;
     }
 }

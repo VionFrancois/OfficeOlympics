@@ -6,7 +6,9 @@ import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.*;
 import javafx.scene.layout.AnchorPane;
+import javafx.scene.layout.BorderPane;
 import javafx.scene.layout.Pane;
+import javafx.scene.text.Text;
 import officeolympics.back.mobels.MobelComponent;
 import officeolympics.back.mobels.MobelComponentLocation;
 import officeolympics.back.mobels.MobelLayout;
@@ -15,6 +17,9 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class ChairBuilderSceneController extends Controller {
+    @FXML
+    public Text dialog;
+
     @FXML
     AnchorPane anchorPane;
     @FXML
@@ -51,6 +56,9 @@ public class ChairBuilderSceneController extends Controller {
     private ImageView imageView8;
 
     @FXML
+    private BorderPane draggable_dialog;
+
+    @FXML
     private List<Pane> draggablePanes = new ArrayList<>();
     @FXML
     private List<ImageView> imageViews = new ArrayList<>();
@@ -58,6 +66,8 @@ public class ChairBuilderSceneController extends Controller {
     private List<Double> offsetYList = new ArrayList<>();
 
     private MobelLayout mobelLayout;
+
+    private boolean isDialogOpen = false, wasDialogOpen = false;
 
     @FXML
     private void initialize() {
@@ -135,6 +145,7 @@ public class ChairBuilderSceneController extends Controller {
     }
 
     private void makeDraggable(Pane node, int index) {
+        if (index == 1) return; // The base of the chair is immovable
         System.out.println("make draggable : ");
         System.out.println(node);
         System.out.println(index);
@@ -173,6 +184,16 @@ public class ChairBuilderSceneController extends Controller {
         System.out.println(mobelLayout.isLayoutFilled());
         System.out.println("=======");
         if (mobelLayout.getMobelComponents().get(index).isOnTarget()) {
+
+            if (!isDialogOpen && !wasDialogOpen){
+                isDialogOpen = true;
+                wasDialogOpen = true;
+                draggable_dialog.setVisible(true);
+                draggable_dialog.setDisable(false);
+                draggable_dialog.toFront();
+                TextCinematicController.play("Bravo, vous avez place votre premiere piece !", dialog);
+            }
+
             // Change to glowing image because it's in the right place
             switch (index) {
                 case 0 -> {
@@ -321,5 +342,16 @@ public class ChairBuilderSceneController extends Controller {
     public void printCurrentMethodName() {
         String methodName = new Throwable().getStackTrace()[1].getMethodName();
         System.out.println("Current method name: " + methodName);
+    }
+
+    public void dialogOnMouseClicked(MouseEvent mouseEvent) {
+
+        if (isDialogOpen){
+            isDialogOpen = false;
+            wasDialogOpen = true;
+            draggable_dialog.setVisible(false);
+            draggable_dialog.setDisable(true);
+        }
+
     }
 }
