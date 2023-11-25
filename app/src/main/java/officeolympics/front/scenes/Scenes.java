@@ -14,5 +14,6 @@ public class Scenes {
             MainScreen2Scene,
             YearsLaterScene,
             EndScreenScene,
+            B_Scene1,
             Page1Scene;
 }
