@@ -9,10 +9,11 @@
             style="-fx-border-color: black; -fx-border-width: 2;"
             fx:controller="officeolympics.front.controllers.DragAndDropSceneController">
    <Pane fx:id="draggablePane1"
-         layoutX="514.0" layoutY="314.0"
-         style="-fx-background-color: red;">
+         layoutX="514.0" layoutY="314.0">
       <ImageView fx:id="imageView1"
-              fitHeight="100.0" fitWidth="100.0" pickOnBounds="true" preserveRatio="true"/>
+              fitHeight="100.0" fitWidth="100.0" pickOnBounds="true" preserveRatio="true">
+         <Image url="@/images/meubles/chair.png" />
+      </ImageView>
    </Pane>
    <Pane fx:id="draggablePane2"
          layoutX="614.0" layoutY="314.0"

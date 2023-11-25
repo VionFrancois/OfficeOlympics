@@ -33,8 +33,9 @@ public class Main extends Application {
 
         Scenes.MainScreenScene = SceneLoader.load("MainScreenScene.fxml");
         Scenes.DragAndDropScene = SceneLoader.load("DragAndDropScene.fxml");
+        System.out.println(Scenes.DragAndDropScene);
         Scenes.YearsLaterScene = SceneLoader.load("YearsLaterScene.fxml");
-        Scenes.MainScreen2Scene = SceneLoader.load("MainScreen2.fxml");
+        Scenes.MainScreen2Scene = SceneLoader.load("MainScreen2Scene.fxml");
         TextCinematicController.play(Scenes.YearsLaterScene);
         //Scenes.EndScreenScene = SceneLoader.load("EndScreenScene.fxml");
         Scenes.Page1Scene = SceneLoader.load("Page1.fxml");
