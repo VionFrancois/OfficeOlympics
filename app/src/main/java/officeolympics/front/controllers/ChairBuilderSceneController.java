@@ -89,7 +89,7 @@ public class ChairBuilderSceneController extends Controller {
         roulettesTargetLocations.add(new MobelComponentLocation(719, 666));
         roulettesTargetLocations.add(new MobelComponentLocation(809, 627));
 
-        mobelComponent1 = new MobelComponent(0,
+       mobelComponent1 = new MobelComponent(0,
                 new MobelComponentLocation(draggablePane1.getLayoutX(), draggablePane1.getLayoutY()),
                 new MobelComponentLocation(318, -7));
         mobelComponents.add(mobelComponent1);
@@ -168,6 +168,20 @@ public class ChairBuilderSceneController extends Controller {
         node.setOnDragDone(DragEvent::consume);
     }
 
+    private void makeUndraggable(Pane node, int index) {
+        if (index == 1) return; // The base of the chair is immovable
+        System.out.println("make undraggable : ");
+        System.out.println(node);
+        System.out.println(index);
+        node.setOnMousePressed(event -> {});
+        node.setOnMouseReleased(event -> {});
+        node.setOnMouseDragged(event -> {});
+        // node.setOnDragDetected(event -> {});
+        node.setOnDragOver(event -> {});
+        node.setOnDragDropped(event -> {});
+        node.setOnDragDone(DragEvent::consume);
+    }
+
     @FXML
     private void draggableOnMousePressed(MouseEvent event, Node node, int index) {
         printCurrentMethodName();
@@ -228,6 +242,7 @@ public class ChairBuilderSceneController extends Controller {
                     draggablePane1.getChildren().add(imageView1);
                     draggablePane1.setLayoutX(mobelComponent1.getTargetLocation().getX());
                     draggablePane1.setLayoutY(mobelComponent1.getTargetLocation().getY());
+                    makeUndraggable(draggablePane1, index);
                 }
                 case 1 -> {
                     imageView2 = new ImageView(new Image("images/meubles/chair_base_glow.png")); // glowing image
@@ -235,6 +250,7 @@ public class ChairBuilderSceneController extends Controller {
                     draggablePane2.getChildren().add(imageView2);
                     draggablePane2.setLayoutX(mobelComponent2.getTargetLocation().getX());
                     draggablePane2.setLayoutY(mobelComponent2.getTargetLocation().getY());
+                    makeUndraggable(draggablePane2, index);
                 }
                 case 2 -> {
                     imageView3 = new ImageView(new Image("images/meubles/chair_armrest_l_glow.png")); // glowing image
@@ -242,6 +258,7 @@ public class ChairBuilderSceneController extends Controller {
                     draggablePane3.getChildren().add(imageView3);
                     draggablePane3.setLayoutX(mobelComponent3.getTargetLocation().getX());
                     draggablePane3.setLayoutY(mobelComponent3.getTargetLocation().getY());
+                    makeUndraggable(draggablePane3, index);
                 }
                 case 3 -> {
                     imageView4 = new ImageView(new Image("images/meubles/chair_armrest_r_glow.png")); // glowing image
@@ -249,31 +266,38 @@ public class ChairBuilderSceneController extends Controller {
                     draggablePane4.getChildren().add(imageView4);
                     draggablePane4.setLayoutX(mobelComponent4.getTargetLocation().getX());
                     draggablePane4.setLayoutY(mobelComponent4.getTargetLocation().getY());
+                    makeUndraggable(draggablePane4, index);
                 }
                 case 4 -> {
                     imageView5 = new ImageView(new Image("images/meubles/chair_wheel_glow.png")); // glowing image
                     draggablePane5.getChildren().remove(0);
                     draggablePane5.getChildren().add(imageView5);
+                    makeUndraggable(draggablePane5, index);
                 }
                 case 5 -> {
                     imageView6 = new ImageView(new Image("images/meubles/chair_wheel_glow.png")); // glowing image
                     draggablePane6.getChildren().remove(0);
                     draggablePane6.getChildren().add(imageView6);
+                    makeUndraggable(draggablePane6, index);
                 }
                 case 6 -> {
                     imageView7 = new ImageView(new Image("images/meubles/chair_wheel_glow.png")); // glowing image
                     draggablePane7.getChildren().remove(0);
                     draggablePane7.getChildren().add(imageView7);
+                    makeUndraggable(draggablePane7, index);
                 }
                 case 7 -> {
                     imageView8 = new ImageView(new Image("images/meubles/chair_wheel_glow.png")); // glowing image
                     draggablePane8.getChildren().remove(0);
                     draggablePane8.getChildren().add(imageView8);
+                    makeUndraggable(draggablePane8, index);
                 }
                 default -> {
                 }
             }
-        } else {
+        }
+        /*
+        else {
             // Change to non glowing image because it's not in the right place
             switch (index) {
                 case 0 -> {
@@ -320,6 +344,7 @@ public class ChairBuilderSceneController extends Controller {
                 }
             }
         }
+         */
     }
 
     @FXML
