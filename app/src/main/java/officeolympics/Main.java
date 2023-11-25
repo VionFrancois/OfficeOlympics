@@ -32,7 +32,7 @@ public class Main extends Application {
         stage = stage_;
 
         Scenes.MainScreenScene = SceneLoader.load("MainScreenScene.fxml");
-        Scenes.DragAndDropScene = SceneLoader.load("DragAndDropScene.fxml");
+        Scenes.DragAndDropScene = SceneLoader.load("ChairBuilderScene.fxml");
         System.out.println(Scenes.DragAndDropScene);
         Scenes.YearsLaterScene = SceneLoader.load("YearsLaterScene.fxml");
         Scenes.MainScreen2Scene = SceneLoader.load("MainScreen2Scene.fxml");
