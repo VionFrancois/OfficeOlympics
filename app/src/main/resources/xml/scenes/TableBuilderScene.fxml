@@ -10,11 +10,6 @@
     <AnchorPane fx:id="anchorPane" prefHeight="200.0" prefWidth="200.0"
                 style="-fx-border-color: black; -fx-border-width: 2;" AnchorPane.bottomAnchor="5.0"
                 AnchorPane.leftAnchor="5.0" AnchorPane.rightAnchor="5.0" AnchorPane.topAnchor="5.0">
-        <Pane fx:id="draggablePane1" layoutX="250.0" layoutY="150.0" >
-            <ImageView fx:id="imageView1" pickOnBounds="true" preserveRatio="true">
-                <Image url="@/images/meubles/planche.png"/>
-            </ImageView>
-        </Pane>
         <Pane fx:id="draggablePane2" layoutX="0.0" layoutY="0.0">
             <ImageView fx:id="imageView2" pickOnBounds="true" preserveRatio="true">
                 <Image url="@/images/meubles/pied.png"/>
@@ -33,6 +28,11 @@
         <Pane fx:id="draggablePane5" layoutX="300.0" layoutY="0.0">
             <ImageView fx:id="imageView5" pickOnBounds="true" preserveRatio="true">
                 <Image url="@/images/meubles/pied.png"/>
+            </ImageView>
+        </Pane>
+        <Pane fx:id="draggablePane1" layoutX="250.0" layoutY="150.0" >
+            <ImageView fx:id="imageView1" pickOnBounds="true" preserveRatio="true">
+                <Image url="@/images/meubles/planche.png"/>
             </ImageView>
         </Pane>
     </AnchorPane>

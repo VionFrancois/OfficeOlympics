@@ -126,7 +126,7 @@ public class TableBuilderSceneController extends Controller {
     }
 
     private void makeDraggable(Pane node, int index) {
-        // if (index == 0) return; // The base of the chair is immovable
+        if (index == 0) return; // The base of the chair is immovable
         System.out.println("make draggable : ");
         System.out.println(node);
         System.out.println(index);
