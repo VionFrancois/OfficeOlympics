@@ -11,7 +11,17 @@
          <font>
             <Font name="IKEASans-Heavy" size="72.0" />
          </font></Label>
-      <ImageView fitHeight="150.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true" />
-
+      <Pane layoutX="129.0" layoutY="142.0" prefHeight="214.0" prefWidth="342.0" style="-fx-border-color: black; -fx-border-width: 1; -fx-border-radius: 10;" onMouseClicked="#handleNextPage">
+         <Label layoutX="179.0" layoutY="124.0" prefHeight="69.0" prefWidth="153.0" text="Play game">
+            <font>
+               <Font name="IKEASans-Heavy" size="26.0" />
+            </font>
+         </Label>
+      <ImageView fx:id="image1" fitHeight="206.0" fitWidth="184.0" layoutX="15.0" layoutY="4.0">
+      <image>
+         <Image url="@/images/bonhomme_flame.png" />
+      </image>
+      </ImageView>
+      </Pane>
    </children>
 </AnchorPane>
