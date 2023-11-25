@@ -5,6 +5,7 @@ import javafx.scene.Node;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.*;
+import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.Pane;
 import officeolympics.back.mobels.MobelComponent;
 import officeolympics.back.mobels.MobelComponentLocation;
@@ -15,53 +16,39 @@ import java.util.List;
 
 public class ChairBuilderSceneController extends Controller {
     @FXML
+    AnchorPane anchorPane;
+    @FXML
     private Pane draggablePane1;
     @FXML
     private ImageView imageView1;
-    @FXML
-    private Image image1;
     @FXML
     private Pane draggablePane2;
     @FXML
     private ImageView imageView2;
     @FXML
-    private Image image2;
-    @FXML
     private Pane draggablePane3;
     @FXML
     private ImageView imageView3;
-    @FXML
-    private Image image3;
     @FXML
     private Pane draggablePane4;
     @FXML
     private ImageView imageView4;
     @FXML
-    private Image image4;
-    @FXML
     private Pane draggablePane5;
     @FXML
     private ImageView imageView5;
-    @FXML
-    private Image image5;
     @FXML
     private Pane draggablePane6;
     @FXML
     private ImageView imageView6;
     @FXML
-    private Image image6;
-    @FXML
     private Pane draggablePane7;
     @FXML
     private ImageView imageView7;
     @FXML
-    private Image image7;
-    @FXML
     private Pane draggablePane8;
     @FXML
     private ImageView imageView8;
-    @FXML
-    private Image image8;
 
     @FXML
     private List<Pane> draggablePanes = new ArrayList<>();
@@ -186,121 +173,100 @@ public class ChairBuilderSceneController extends Controller {
         System.out.println(mobelLayout.isLayoutFilled());
         System.out.println("=======");
         if (mobelLayout.getMobelComponents().get(index).isOnTarget()) {
+            // Change to glowing image because it's in the right place
             switch (index) {
-                case 0:
-                    imageView1 = new ImageView(new Image("images/meubles/pied_disque.png")); // glowing image
+                case 0 -> {
+                    imageView1 = new ImageView(new Image("images/meubles/chair_glow.png")); // glowing image
                     draggablePane1.getChildren().remove(0);
                     draggablePane1.getChildren().add(imageView1);
-                    draggablePane1.setStyle("-fx-background-color: lightgreen;");
-                    break;
-                case 1:
-                    imageView2 = new ImageView(new Image("images/meubles/pied_disque.png")); // glowing image
+                }
+                case 1 -> {
+                    imageView2 = new ImageView(new Image("images/meubles/chair_base_glow.png")); // glowing image
                     draggablePane2.getChildren().remove(0);
                     draggablePane2.getChildren().add(imageView2);
-                    draggablePane2.setStyle("-fx-background-color: lightgreen;");
-                    break;
-                case 2:
-                    imageView3 = new ImageView(new Image("images/meubles/pied_disque.png")); // glowing image
+                }
+                case 2 -> {
+                    imageView3 = new ImageView(new Image("images/meubles/chair_armrest_l_glow.png")); // glowing image
                     draggablePane3.getChildren().remove(0);
                     draggablePane3.getChildren().add(imageView3);
-                    draggablePane3.setStyle("-fx-background-color: lightgreen;");
-                    break;
-                case 3:
-                    imageView4 = new ImageView(new Image("images/meubles/pied_disque.png")); // glowing image
+                }
+                case 3 -> {
+                    imageView4 = new ImageView(new Image("images/meubles/chair_armrest_r_glow.png")); // glowing image
                     draggablePane4.getChildren().remove(0);
                     draggablePane4.getChildren().add(imageView4);
-                    draggablePane4.setStyle("-fx-background-color: lightgreen;");
-                    break;
-                case 4:
-                    imageView5 = new ImageView(new Image("images/meubles/pied_disque.png")); // glowing image
+                }
+                case 4 -> {
+                    imageView5 = new ImageView(new Image("images/meubles/chair_wheel_glow.png")); // glowing image
                     draggablePane5.getChildren().remove(0);
                     draggablePane5.getChildren().add(imageView5);
-                    draggablePane5.setStyle("-fx-background-color: lightgreen;");
-                    break;
-                case 5:
-                    imageView6 = new ImageView(new Image("images/meubles/pied_disque.png")); // glowing image
+                }
+                case 5 -> {
+                    imageView6 = new ImageView(new Image("images/meubles/chair_wheel_glow.png")); // glowing image
                     draggablePane6.getChildren().remove(0);
                     draggablePane6.getChildren().add(imageView6);
-                    draggablePane6.setStyle("-fx-background-color: lightgreen;");
-                    break;
-                case 6:
-                    imageView7 = new ImageView(new Image("images/meubles/pied_disque.png")); // glowing image
+                }
+                case 6 -> {
+                    imageView7 = new ImageView(new Image("images/meubles/chair_wheel_glow.png")); // glowing image
                     draggablePane7.getChildren().remove(0);
                     draggablePane7.getChildren().add(imageView7);
-                    draggablePane7.setStyle("-fx-background-color: lightgreen;");
-                    break;
-                case 7:
-                    imageView8 = new ImageView(new Image("images/meubles/pied_disque.png")); // glowing image
+                }
+                case 7 -> {
+                    imageView8 = new ImageView(new Image("images/meubles/chair_wheel_glow.png")); // glowing image
                     draggablePane8.getChildren().remove(0);
                     draggablePane8.getChildren().add(imageView8);
-                    draggablePane8.setStyle("-fx-background-color: lightgreen;");
-                    break;
-                default:
-                    break;
+                }
+                default -> {
+                }
             }
         } else {
+            // Change to non glowing image because it's not in the right place
             switch (index) {
-                case 0:
-                    imageView1 = new ImageView(new Image("images/meubles/chair_wheel.png"));
+                case 0 -> {
+                    imageView1 = new ImageView(new Image("images/meubles/chair.png"));
                     draggablePane1.getChildren().remove(0);
                     draggablePane1.getChildren().add(imageView1);
-                    draggablePane1.setStyle("-fx-background-color: transparent;"); // non glowing image
-                    break;
-                case 1:
-                    imageView2 = new ImageView(new Image("images/meubles/chair_wheel.png"));
+                }
+                case 1 -> {
+                    imageView2 = new ImageView(new Image("images/meubles/chair_base.png"));
                     draggablePane2.getChildren().remove(0);
                     draggablePane2.getChildren().add(imageView2);
-                    draggablePane2.setStyle("-fx-background-color: transparent;"); // non glowing image
-                    break;
-                case 2:
-                    imageView3 = new ImageView(new Image("images/meubles/chair_wheel.png"));
+                }
+                case 2 -> {
+                    imageView3 = new ImageView(new Image("images/meubles/chair_armrest_l.png"));
                     draggablePane3.getChildren().remove(0);
                     draggablePane3.getChildren().add(imageView3);
-                    draggablePane3.setStyle("-fx-background-color: transparent;"); // non glowing image
-                    break;
-                case 3:
-                    imageView4 = new ImageView(new Image("images/meubles/chair_wheel.png"));
+                }
+                case 3 -> {
+                    imageView4 = new ImageView(new Image("images/meubles/chair_armrest_r.png"));
                     draggablePane4.getChildren().remove(0);
                     draggablePane4.getChildren().add(imageView4);
-                    draggablePane4.setStyle("-fx-background-color: transparent;"); // non glowing image
-                    break;
-                case 4:
+                }
+                case 4 -> {
                     imageView5 = new ImageView(new Image("images/meubles/chair_wheel.png"));
                     draggablePane5.getChildren().remove(0);
                     draggablePane5.getChildren().add(imageView5);
-                    draggablePane5.setStyle("-fx-background-color: transparent;"); // non glowing image
-                    break;
-                case 5:
+                }
+                case 5 -> {
                     imageView6 = new ImageView(new Image("images/meubles/chair_wheel.png"));
                     draggablePane6.getChildren().remove(0);
                     draggablePane6.getChildren().add(imageView6);
-                    draggablePane6.setStyle("-fx-background-color: transparent;"); // non glowing image
-                    break;
-                case 6:
+                }
+                case 6 -> {
                     imageView7 = new ImageView(new Image("images/meubles/chair_wheel.png"));
                     draggablePane7.getChildren().remove(0);
                     draggablePane7.getChildren().add(imageView7);
-                    draggablePane7.setStyle("-fx-background-color: transparent;"); // non glowing image
-                    break;
-                case 7:
+                }
+                case 7 -> {
                     imageView8 = new ImageView(new Image("images/meubles/chair_wheel.png"));
                     draggablePane8.getChildren().remove(0);
                     draggablePane8.getChildren().add(imageView8);
-                    draggablePane8.setStyle("-fx-background-color: transparent;"); // non glowing image
-                    break;
-                default:
-                    break;
+                }
+                default -> {
+                }
             }
         }
         if (mobelLayout.isLayoutFilled()) {
-            draggablePane1.setStyle("-fx-background-color: green;");
-            draggablePane2.setStyle("-fx-background-color: green;");
-            draggablePane3.setStyle("-fx-background-color: green;");
-            draggablePane4.setStyle("-fx-background-color: green;");
-            draggablePane5.setStyle("-fx-background-color: green;");
-            draggablePane6.setStyle("-fx-background-color: green;");
-            draggablePane7.setStyle("-fx-background-color: green;");
-            draggablePane8.setStyle("-fx-background-color: green;");
+            anchorPane.setStyle("-fx-background-color: rgba(0, 150, 0, 0.2);");
         }
 
         // Put the immovable piece to front at all time
