@@ -32,7 +32,6 @@ public class Main extends Application {
         stage = stage_;
 
         Scenes.MainScreenScene = SceneLoader.load("MainScreenScene.fxml");
-        Scenes.MainScreen2Scene = SceneLoader.load("MainScreen2.fxml");
         Scenes.YearsLaterScene = SceneLoader.load("YearsLaterScene.fxml");
         TextCinematicController.play(Scenes.YearsLaterScene);
         //Scenes.EndScreenScene = SceneLoader.load("EndScreenScene.fxml");
@@ -42,7 +41,7 @@ public class Main extends Application {
 
         stage.setResizable(true);
         stage.setTitle("FUMA");
-        stage.setScene(Scenes.MainScreen2Scene);
+        stage.setScene(Scenes.MainScreenScene);
         stage.show();
     }
 
