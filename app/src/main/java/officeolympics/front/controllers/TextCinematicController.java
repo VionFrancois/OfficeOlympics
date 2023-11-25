@@ -12,7 +12,7 @@ import officeolympics.front.scenes.Scenes;
  */
 public class TextCinematicController extends Controller{
 
-    private static final int TEXT_SPEED = 500;
+    private static final int TEXT_SPEED = 350;
 
     private static final int TEXT_DELAY = 1000;
 
