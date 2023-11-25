@@ -4,9 +4,12 @@ import javafx.fxml.FXML;
 import javafx.scene.Group;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.text.Text;
+import javafx.scene.web.WebView;
+import officeolympics.Main;
 import officeolympics.front.scenes.Scenes;
 
 import java.util.List;
+import java.util.Objects;
 import java.util.concurrent.locks.Lock;
 
 public class B_Scene1Controller extends Controller {
@@ -19,6 +22,9 @@ public class B_Scene1Controller extends Controller {
             "Le fabricant de meuble mondialement reconnu est devenu le sponsor principal des JO. En effet, des épreuves leurs sont dédiées et la moitié des places ne sont réservables qu’avec une carte IKEA family.",
             "Stanley, développeur junior chez Odoo, s’entraîne d’arrache pied pour gagner cette prochaine édition."
     );
+
+    @FXML
+    public WebView dialog_web;
 
     private int index = 0;
 
