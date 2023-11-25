@@ -22,7 +22,7 @@
    </Pane>
    <Pane fx:id="draggablePane3"
          layoutX="714.0" layoutY="314.0"
-         style="-fx-background-color: green;">
+         style="-fx-background-color: gray;">
       <ImageView fx:id="imageView3"
                  fitHeight="100.0" fitWidth="100.0" pickOnBounds="true" preserveRatio="true"/>
    </Pane>

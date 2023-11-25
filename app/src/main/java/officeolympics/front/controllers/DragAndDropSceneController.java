@@ -125,6 +125,36 @@ public class DragAndDropSceneController extends Controller {
         System.out.print("isOnTarget : ");
         System.out.println(mobelLayout.getMobelComponents().get(index).isOnTarget());
         System.out.println("=======");
+        System.out.println(mobelLayout.isLayoutFilled());
+        System.out.println("=======");
+        if (mobelLayout.getMobelComponents().get(index).isOnTarget()) {
+            switch (index) {
+                case 0:
+                    draggablePane1.setStyle("-fx-background-color: lightgreen;");
+                    break;
+                case 1:
+                    draggablePane2.setStyle("-fx-background-color: lightgreen;");
+                    break;
+                case 2:
+                    draggablePane3.setStyle("-fx-background-color: lightgreen;");
+                    break;
+                case 3:
+                    draggablePane4.setStyle("-fx-background-color: lightgreen;");
+                    break;
+                case 4:
+                    draggablePane5.setStyle("-fx-background-color: lightgreen;");
+                    break;
+                default:
+                    break;
+            }
+        }
+        if (mobelLayout.isLayoutFilled()) {
+            draggablePane1.setStyle("-fx-background-color: green;");
+            draggablePane2.setStyle("-fx-background-color: green;");
+            draggablePane3.setStyle("-fx-background-color: green;");
+            draggablePane4.setStyle("-fx-background-color: green;");
+            draggablePane5.setStyle("-fx-background-color: green;");
+        }
     }
 
     @FXML
