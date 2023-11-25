@@ -12,6 +12,11 @@ public class MobelLayout {
     public boolean isLayoutFilled() {
         // For all mobelComponent in the mobelComponents ArrayList, check if they are on target
         // (we define what "on target" is, it could be defined as "at most 10 pixels away in each direction".
+        for (MobelComponent mobelComponent : mobelComponents) {
+            if (!mobelComponent.isOnTarget()) {
+                System.out.println(mobelComponent + " is not on location :(");
+            }
+        }
         return mobelComponents.stream().allMatch(MobelComponent::isOnTarget);
     }
 
