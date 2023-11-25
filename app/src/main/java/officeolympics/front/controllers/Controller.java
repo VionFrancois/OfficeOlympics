@@ -1,12 +1,16 @@
 package officeolympics.front.controllers;
 
+import javafx.scene.Group;
+import officeolympics.Main;
 import officeolympics.front.animation.FadeInTransition;
+import officeolympics.front.animation.pageflip.FlipTransition;
 import officeolympics.front.animation.threads.FadeOutThread;
 import javafx.fxml.FXML;
 import javafx.scene.Node;
 import javafx.scene.control.Button;
 import javafx.scene.input.MouseEvent;
 import javafx.util.Duration;
+import officeolympics.front.animation.threads.FlipThread;
 
 import java.util.Calendar;
 
@@ -198,5 +202,10 @@ public class Controller {
         FadeInTransition.playFromStartOn(node, Duration.millis(fadeInDuration));
         sleepAndFadeOutFadeThread = new FadeOutThread();
         sleepAndFadeOutFadeThread.start(fadeOutDuration, sleepDuration + fadeInDuration, node);
+    }
+
+    public void pageFlip(Group node) {
+        FlipThread flipThread = new FlipThread(node, Main.WIDTH, Main.HEIGHT);
+        flipThread.start();
     }
 }

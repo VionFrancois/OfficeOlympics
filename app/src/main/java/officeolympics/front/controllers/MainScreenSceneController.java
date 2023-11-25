@@ -1,5 +1,8 @@
 package officeolympics.front.controllers;
 
+import javafx.scene.Group;
+import officeolympics.front.animation.pageflip.FlipTransition;
+import officeolympics.front.animation.threads.FlipThread;
 import officeolympics.front.navigation.Flow;
 import officeolympics.front.navigation.navigators.BackButtonNavigator;
 import officeolympics.front.scenes.SceneLoader;
@@ -22,6 +25,8 @@ public class MainScreenSceneController extends Controller implements BackButtonN
     @Override
     public void handleBackButtonNavigation(MouseEvent event) {
         // Main.setScene(Flow.back());
+        // Navigate to the previous scene with page flip animation
+        this.pageFlip((Group) Flow.pop().getRoot());
     }
 
     @Override

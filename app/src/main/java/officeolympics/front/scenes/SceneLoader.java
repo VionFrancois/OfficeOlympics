@@ -1,14 +1,13 @@
 package officeolympics.front.scenes;
 
+import javafx.scene.Group;
+import javafx.scene.Parent;
 import officeolympics.Main;
 import javafx.fxml.FXMLLoader;
-import javafx.scene.Parent;
 import javafx.scene.Scene;
 
 import java.io.IOException;
 import java.net.URL;
-import java.util.Locale;
-import java.util.ResourceBundle;
 
 /**
  * Handles the loading of FXML files to create the Scenes.
@@ -30,7 +29,8 @@ public class SceneLoader {
         FXMLLoader FXMLLoader = new FXMLLoader(url);
         try {
             Parent sceneParent = FXMLLoader.load();
-            return new Scene(sceneParent, 1280, 720);
+            Group root = new Group(sceneParent);
+            return new Scene(root, 1280, 720);
         } catch (IOException e) {
             System.out.println("FATAL ERROR while trying to load scene " + url);
             e.printStackTrace();
