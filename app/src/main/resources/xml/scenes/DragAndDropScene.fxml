@@ -4,25 +4,38 @@
 <?import javafx.scene.layout.*?>
 
 
-<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/17.0.2-ea"
+<AnchorPane prefHeight="720.0" prefWidth="1280.0" xmlns="http://javafx.com/javafx/17.0.2-ea"
             xmlns:fx="http://javafx.com/fxml/1"
+            style="-fx-border-color: black; -fx-border-width: 2;"
             fx:controller="officeolympics.front.controllers.DragAndDropSceneController">
    <Pane fx:id="draggablePane1"
-         layoutX="14.0" layoutY="14.0"
+         layoutX="514.0" layoutY="314.0"
          style="-fx-background-color: red;">
       <ImageView fx:id="imageView1"
-              fitHeight="50.0" fitWidth="50.0" pickOnBounds="true" preserveRatio="true"/>
+              fitHeight="100.0" fitWidth="100.0" pickOnBounds="true" preserveRatio="true"/>
    </Pane>
    <Pane fx:id="draggablePane2"
-         layoutX="14.0" layoutY="14.0"
+         layoutX="614.0" layoutY="314.0"
          style="-fx-background-color: blue;">
       <ImageView fx:id="imageView2"
-                 fitHeight="50.0" fitWidth="50.0" pickOnBounds="true" preserveRatio="true"/>
+                 fitHeight="100.0" fitWidth="100.0" pickOnBounds="true" preserveRatio="true"/>
    </Pane>
    <Pane fx:id="draggablePane3"
-         layoutX="14.0" layoutY="14.0"
+         layoutX="714.0" layoutY="314.0"
          style="-fx-background-color: green;">
       <ImageView fx:id="imageView3"
-                 fitHeight="50.0" fitWidth="50.0" pickOnBounds="true" preserveRatio="true"/>
+                 fitHeight="100.0" fitWidth="100.0" pickOnBounds="true" preserveRatio="true"/>
+   </Pane>
+   <Pane fx:id="draggablePane4"
+         layoutX="514.0" layoutY="414.0"
+         style="-fx-background-color: yellow;">
+      <ImageView fx:id="imageView4"
+                 fitHeight="100.0" fitWidth="100.0" pickOnBounds="true" preserveRatio="true"/>
+   </Pane>
+   <Pane fx:id="draggablePane5"
+         layoutX="614.0" layoutY="414.0"
+         style="-fx-background-color: pink;">
+      <ImageView fx:id="imageView5"
+                 fitHeight="100.0" fitWidth="100.0" pickOnBounds="true" preserveRatio="true"/>
    </Pane>
 </AnchorPane>

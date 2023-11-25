@@ -22,6 +22,14 @@ public class DragAndDropSceneController extends Controller {
     private Pane draggablePane3;
     @FXML
     private ImageView imageView3;
+    @FXML
+    private Pane draggablePane4;
+    @FXML
+    private ImageView imageView4;
+    @FXML
+    private Pane draggablePane5;
+    @FXML
+    private ImageView imageView5;
 
     @FXML
     private List<Pane> draggablePanes = new ArrayList<>();
@@ -36,9 +44,13 @@ public class DragAndDropSceneController extends Controller {
         draggablePanes.add(draggablePane1);
         draggablePanes.add(draggablePane2);
         draggablePanes.add(draggablePane3);
+        draggablePanes.add(draggablePane4);
+        draggablePanes.add(draggablePane5);
         imageViews.add(imageView1);
         imageViews.add(imageView2);
         imageViews.add(imageView3);
+        imageViews.add(imageView4);
+        imageViews.add(imageView5);
 
         // Initialize offsets
         for (int i = 0; i < draggablePanes.size(); i++) {
