@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="officeolympics.front.controllers.TableBuilderSceneController">
+    <AnchorPane fx:id="anchorPane" prefHeight="200.0" prefWidth="200.0" style="-fx-border-color: black; -fx-border-width: 2;" AnchorPane.bottomAnchor="5.0" AnchorPane.leftAnchor="5.0" AnchorPane.rightAnchor="5.0" AnchorPane.topAnchor="5.0">
+        <Pane fx:id="draggablePane1">
+            <ImageView fx:id="imageView1" pickOnBounds="true" preserveRatio="true">
+                <Image url="@/images/meubles/planche.png" />
+            </ImageView>
+        </Pane>
+        <Pane fx:id="draggablePane2" AnchorPane.leftAnchor="434.0" AnchorPane.topAnchor="480.0" />
+        <Pane fx:id="draggablePane3" AnchorPane.leftAnchor="434.0" AnchorPane.topAnchor="480.0" />
+        <Pane fx:id="draggablePane4" AnchorPane.leftAnchor="434.0" AnchorPane.topAnchor="480.0" />
+        <Pane fx:id="draggablePane5" AnchorPane.leftAnchor="434.0" AnchorPane.topAnchor="480.0" />
+         <ImageView fx:id="imageView5" layoutX="441.0" layoutY="41.0" pickOnBounds="true" preserveRatio="true">
+             <Image url="@/images/meubles/pied.png" />
+         </ImageView>
+         <ImageView fx:id="imageView4" layoutX="560.0" layoutY="-43.0" pickOnBounds="true" preserveRatio="true">
+             <Image url="@/images/meubles/pied.png" />
+         </ImageView>
+         <ImageView fx:id="imageView3" layoutX="292.0" layoutY="-36.0" pickOnBounds="true" preserveRatio="true">
+             <Image url="@/images/meubles/pied.png" />
+         </ImageView>
+         <ImageView fx:id="imageView2" layoutX="833.0" layoutY="-63.0" pickOnBounds="true" preserveRatio="true">
+             <Image url="@/images/meubles/pied.png" />
+         </ImageView>
+    </AnchorPane>
+    <BorderPane id="draggable-dialog" fx:id="draggable_dialog" disable="true" onMouseClicked="#dialogOnMouseClicked" prefHeight="200.0" prefWidth="200.0" style="-fx-border-color: black; -fx-border-width: 1; -fx-border-radius: 10; -fx-background-color: rgb(255, 255, 255);" visible="false" AnchorPane.bottomAnchor="40.0" AnchorPane.leftAnchor="50.0" AnchorPane.rightAnchor="50.0">
+        <center>
+            <Text id="text-cinematic" fx:id="dialog" strokeType="OUTSIDE" strokeWidth="0.0" text="Text" wrappingWidth="1100.0" BorderPane.alignment="CENTER">
+                <font>
+                    <Font name="IKEASans-Heavy" size="36.0" />
+                </font>
+            </Text>
+        </center>
+    </BorderPane>
+</AnchorPane>
