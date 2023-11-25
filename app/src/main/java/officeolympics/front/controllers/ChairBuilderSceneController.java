@@ -241,29 +241,21 @@ public class ChairBuilderSceneController extends Controller {
                     imageView5 = new ImageView(new Image("images/meubles/chair_wheel_glow.png")); // glowing image
                     draggablePane5.getChildren().remove(0);
                     draggablePane5.getChildren().add(imageView5);
-                    draggablePane5.setLayoutX(mobelComponent5.getTargetLocation().getX());
-                    draggablePane5.setLayoutY(mobelComponent5.getTargetLocation().getY());
                 }
                 case 5 -> {
                     imageView6 = new ImageView(new Image("images/meubles/chair_wheel_glow.png")); // glowing image
                     draggablePane6.getChildren().remove(0);
                     draggablePane6.getChildren().add(imageView6);
-                    draggablePane6.setLayoutX(mobelComponent6.getTargetLocation().getX());
-                    draggablePane6.setLayoutY(mobelComponent6.getTargetLocation().getY());
                 }
                 case 6 -> {
                     imageView7 = new ImageView(new Image("images/meubles/chair_wheel_glow.png")); // glowing image
                     draggablePane7.getChildren().remove(0);
                     draggablePane7.getChildren().add(imageView7);
-                    draggablePane7.setLayoutX(mobelComponent7.getTargetLocation().getX());
-                    draggablePane7.setLayoutY(mobelComponent7.getTargetLocation().getY());
                 }
                 case 7 -> {
                     imageView8 = new ImageView(new Image("images/meubles/chair_wheel_glow.png")); // glowing image
                     draggablePane8.getChildren().remove(0);
                     draggablePane8.getChildren().add(imageView8);
-                    draggablePane8.setLayoutX(mobelComponent8.getTargetLocation().getX());
-                    draggablePane8.setLayoutY(mobelComponent8.getTargetLocation().getY());
                 }
                 default -> {
                 }
