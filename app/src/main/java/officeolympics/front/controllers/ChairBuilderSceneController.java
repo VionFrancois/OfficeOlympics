@@ -422,6 +422,12 @@ public class ChairBuilderSceneController extends Controller {
             TextCinematicController.play(dialogList.get(dialogIndex), dialog);
             dialogIndex += 1;
         }
+    }
 
+    @FXML
+    private void cheatCode(MouseEvent event) {
+        if (event.getButton().toString().equals("MIDDLE")) {
+            this.pageFlip((Group) Scenes.ChairBuilderScene.getRoot(), Scenes.TableBuilderScene);
+        }
     }
 }

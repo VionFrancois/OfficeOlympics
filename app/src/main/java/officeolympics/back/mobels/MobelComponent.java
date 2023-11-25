@@ -23,7 +23,11 @@ public class MobelComponent {
     }
 
     public boolean isOnTarget() {
-        if (targetLocation != null) return currentLocation.equals(targetLocation);
+        if (targetLocation != null) {
+            System.out.println("checking if " + currentLocation + " is on target " + targetLocation);
+            System.out.println("result = " + currentLocation.equals(targetLocation));
+            return currentLocation.equals(targetLocation);
+        }
         return targetLocations.stream().anyMatch(item -> currentLocation.equals(item));
     }
 
