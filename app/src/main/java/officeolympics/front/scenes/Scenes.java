@@ -14,12 +14,13 @@ import java.util.Objects;
 public class Scenes {
     public static Scene
             MainScreenScene,
-            DragAndDropScene,
+            ChairBuilderScene,
             MainScreen2Scene,
             YearsLaterScene,
             EndScreenScene,
             B_Scene1,
-            Page1Scene;
+            Page1Scene,
+            TableBuilderScene;
 
     public static Image getImage(String name) {
         return new Image(Objects.requireNonNull(Main.class.getResourceAsStream("/images/" + name)));

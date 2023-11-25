@@ -1,6 +1,7 @@
 package officeolympics.front.controllers;
 
 import javafx.fxml.FXML;
+import javafx.scene.Group;
 import javafx.scene.Node;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
@@ -12,6 +13,7 @@ import javafx.scene.text.Text;
 import officeolympics.back.mobels.MobelComponent;
 import officeolympics.back.mobels.MobelComponentLocation;
 import officeolympics.back.mobels.MobelLayout;
+import officeolympics.front.scenes.Scenes;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -67,7 +69,13 @@ public class ChairBuilderSceneController extends Controller {
 
     private MobelLayout mobelLayout;
 
-    private boolean isDialogOpen = false, wasDialogOpen = false;
+    private boolean isDialogOpen = false, endDialog = false, wasDialogOpen = false;
+    private int dialogIndex = 0;
+    private final List<String> dialogList = List.of(
+            "Argh.. C'est n'importe quoi ce manuel, on voit pas le bon côté...",
+            "Comment ça se fait que j’arrive pas à dépasser les suédois ? J’ai pourtant fait le meuble en moins de 4 minutes...",
+            "Je réessayerai une autre fois"
+    );
 
     private MobelComponent mobelComponent1, mobelComponent2, mobelComponent3, mobelComponent4, mobelComponent5, mobelComponent6, mobelComponent7, mobelComponent8;
 
@@ -82,7 +90,7 @@ public class ChairBuilderSceneController extends Controller {
         roulettesTargetLocations.add(new MobelComponentLocation(719, 666));
         roulettesTargetLocations.add(new MobelComponentLocation(809, 627));
 
-        mobelComponent1 = new MobelComponent(0,
+       mobelComponent1 = new MobelComponent(0,
                 new MobelComponentLocation(draggablePane1.getLayoutX(), draggablePane1.getLayoutY()),
                 new MobelComponentLocation(318, -7));
         mobelComponents.add(mobelComponent1);
@@ -161,6 +169,20 @@ public class ChairBuilderSceneController extends Controller {
         node.setOnDragDone(DragEvent::consume);
     }
 
+    private void makeUndraggable(Pane node, int index) {
+        if (index == 1) return; // The base of the chair is immovable
+        System.out.println("make undraggable : ");
+        System.out.println(node);
+        System.out.println(index);
+        node.setOnMousePressed(event -> {});
+        node.setOnMouseReleased(event -> {});
+        node.setOnMouseDragged(event -> {});
+        // node.setOnDragDetected(event -> {});
+        node.setOnDragOver(event -> {});
+        node.setOnDragDropped(event -> {});
+        node.setOnDragDone(DragEvent::consume);
+    }
+
     @FXML
     private void draggableOnMousePressed(MouseEvent event, Node node, int index) {
         printCurrentMethodName();
@@ -188,7 +210,13 @@ public class ChairBuilderSceneController extends Controller {
         System.out.println("=======");
         checkIsOnTargetByIndex(index);
         if (mobelLayout.isLayoutFilled()) {
-            // TODO : show dialog
+            endDialog = true;
+            isDialogOpen = true;
+            draggable_dialog.setVisible(true);
+            draggable_dialog.setDisable(false);
+            draggable_dialog.toFront();
+            TextCinematicController.play(dialogList.get(dialogIndex), dialog);
+            dialogIndex += 1;
         }
 
         // Put the immovable piece to front at all time
@@ -198,13 +226,14 @@ public class ChairBuilderSceneController extends Controller {
     private void checkIsOnTargetByIndex(int index) {
         if (mobelLayout.getMobelComponents().get(index).isOnTarget()) {
 
-            if (!isDialogOpen && !wasDialogOpen){
+            if (!isDialogOpen && !endDialog && !wasDialogOpen) {
                 isDialogOpen = true;
                 wasDialogOpen = true;
                 draggable_dialog.setVisible(true);
                 draggable_dialog.setDisable(false);
                 draggable_dialog.toFront();
-                TextCinematicController.play("Bravo, vous avez place votre premiere piece !", dialog);
+                TextCinematicController.play(dialogList.get(dialogIndex), dialog);
+                dialogIndex += 1;
             }
 
             // Change to glowing image because it's in the right place
@@ -215,6 +244,7 @@ public class ChairBuilderSceneController extends Controller {
                     draggablePane1.getChildren().add(imageView1);
                     draggablePane1.setLayoutX(mobelComponent1.getTargetLocation().getX());
                     draggablePane1.setLayoutY(mobelComponent1.getTargetLocation().getY());
+                    makeUndraggable(draggablePane1, index);
                 }
                 case 1 -> {
                     imageView2 = new ImageView(new Image("images/meubles/chair_base_glow.png")); // glowing image
@@ -222,6 +252,7 @@ public class ChairBuilderSceneController extends Controller {
                     draggablePane2.getChildren().add(imageView2);
                     draggablePane2.setLayoutX(mobelComponent2.getTargetLocation().getX());
                     draggablePane2.setLayoutY(mobelComponent2.getTargetLocation().getY());
+                    makeUndraggable(draggablePane2, index);
                 }
                 case 2 -> {
                     imageView3 = new ImageView(new Image("images/meubles/chair_armrest_l_glow.png")); // glowing image
@@ -229,6 +260,7 @@ public class ChairBuilderSceneController extends Controller {
                     draggablePane3.getChildren().add(imageView3);
                     draggablePane3.setLayoutX(mobelComponent3.getTargetLocation().getX());
                     draggablePane3.setLayoutY(mobelComponent3.getTargetLocation().getY());
+                    makeUndraggable(draggablePane3, index);
                 }
                 case 3 -> {
                     imageView4 = new ImageView(new Image("images/meubles/chair_armrest_r_glow.png")); // glowing image
@@ -236,31 +268,38 @@ public class ChairBuilderSceneController extends Controller {
                     draggablePane4.getChildren().add(imageView4);
                     draggablePane4.setLayoutX(mobelComponent4.getTargetLocation().getX());
                     draggablePane4.setLayoutY(mobelComponent4.getTargetLocation().getY());
+                    makeUndraggable(draggablePane4, index);
                 }
                 case 4 -> {
                     imageView5 = new ImageView(new Image("images/meubles/chair_wheel_glow.png")); // glowing image
                     draggablePane5.getChildren().remove(0);
                     draggablePane5.getChildren().add(imageView5);
+                    makeUndraggable(draggablePane5, index);
                 }
                 case 5 -> {
                     imageView6 = new ImageView(new Image("images/meubles/chair_wheel_glow.png")); // glowing image
                     draggablePane6.getChildren().remove(0);
                     draggablePane6.getChildren().add(imageView6);
+                    makeUndraggable(draggablePane6, index);
                 }
                 case 6 -> {
                     imageView7 = new ImageView(new Image("images/meubles/chair_wheel_glow.png")); // glowing image
                     draggablePane7.getChildren().remove(0);
                     draggablePane7.getChildren().add(imageView7);
+                    makeUndraggable(draggablePane7, index);
                 }
                 case 7 -> {
                     imageView8 = new ImageView(new Image("images/meubles/chair_wheel_glow.png")); // glowing image
                     draggablePane8.getChildren().remove(0);
                     draggablePane8.getChildren().add(imageView8);
+                    makeUndraggable(draggablePane8, index);
                 }
                 default -> {
                 }
             }
-        } else {
+        }
+        /*
+        else {
             // Change to non glowing image because it's not in the right place
             switch (index) {
                 case 0 -> {
@@ -307,6 +346,7 @@ public class ChairBuilderSceneController extends Controller {
                 }
             }
         }
+         */
     }
 
     @FXML
@@ -361,11 +401,26 @@ public class ChairBuilderSceneController extends Controller {
 
     public void dialogOnMouseClicked(MouseEvent mouseEvent) {
 
-        if (isDialogOpen){
+        if (dialogIndex >= dialogList.size()){
+            this.pageFlip((Group) Scenes.ChairBuilderScene.getRoot(), Scenes.TableBuilderScene);
+            return;
+        }
+
+        if (isDialogOpen && !endDialog){
             isDialogOpen = false;
-            wasDialogOpen = true;
             draggable_dialog.setVisible(false);
             draggable_dialog.setDisable(true);
+        }
+        else if (isDialogOpen && endDialog){
+            if(TextCinematicController.isRunning()){
+                TextCinematicController.stop();
+                TextCinematicController.setDelayBefore(0);
+            }
+            else {
+                TextCinematicController.setDelayBefore(200);
+            }
+            TextCinematicController.play(dialogList.get(dialogIndex), dialog);
+            dialogIndex += 1;
         }
 
     }

@@ -9,7 +9,6 @@ import javafx.application.Application;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
 import officeolympics.front.controllers.TextCinematicController;
-import officeolympics.front.navigation.Flow;
 import officeolympics.front.scenes.SceneLoader;
 import officeolympics.front.scenes.Scenes;
 
@@ -32,8 +31,9 @@ public class Main extends Application {
         stage = stage_;
 
         Scenes.MainScreenScene = SceneLoader.load("MainScreenScene.fxml");
-        Scenes.DragAndDropScene = SceneLoader.load("ChairBuilderScene.fxml");
-        System.out.println(Scenes.DragAndDropScene);
+        Scenes.ChairBuilderScene = SceneLoader.load("ChairBuilderScene.fxml");
+        Scenes.TableBuilderScene = SceneLoader.load("TableBuilderScene.fxml");
+        System.out.println(Scenes.ChairBuilderScene);
         Scenes.YearsLaterScene = SceneLoader.load("YearsLaterScene.fxml");
         Scenes.MainScreen2Scene = SceneLoader.load("MainScreen2Scene.fxml");
         TextCinematicController.play(Scenes.YearsLaterScene);

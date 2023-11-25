@@ -116,19 +116,33 @@ public class TableBuilderSceneController extends Controller {
             }
         }
 
-        private void makeDraggable(Pane node, int index) {
-            if (index == 1) return; // The base of the chair is immovable
-            System.out.println("make draggable : ");
-            System.out.println(node);
-            System.out.println(index);
-            node.setOnMousePressed(event -> draggableOnMousePressed(event, node, index));
-            node.setOnMouseReleased(event -> draggableOnMouseReleased(event, node, index));
-            node.setOnMouseDragged(event -> draggableOnMouseDragged(event, node, index));
-            // node.setOnDragDetected(event -> draggableOnDragDetected(event, node, imageView));
-            node.setOnDragOver(event -> draggableOnDragOver(event, node));
-            node.setOnDragDropped(event -> draggableOnDragDropped(event, node, index));
-            node.setOnDragDone(DragEvent::consume);
-        }
+    private void makeDraggable(Pane node, int index) {
+        if (index == 1) return; // The base of the chair is immovable
+        System.out.println("make draggable : ");
+        System.out.println(node);
+        System.out.println(index);
+        node.setOnMousePressed(event -> draggableOnMousePressed(event, node, index));
+        node.setOnMouseReleased(event -> draggableOnMouseReleased(event, node, index));
+        node.setOnMouseDragged(event -> draggableOnMouseDragged(event, node, index));
+        // node.setOnDragDetected(event -> draggableOnDragDetected(event, node, imageView));
+        node.setOnDragOver(event -> draggableOnDragOver(event, node));
+        node.setOnDragDropped(event -> draggableOnDragDropped(event, node, index));
+        node.setOnDragDone(DragEvent::consume);
+    }
+
+    private void makeUndraggable(Pane node, int index) {
+        if (index == 1) return; // The base of the chair is immovable
+        System.out.println("make undraggable : ");
+        System.out.println(node);
+        System.out.println(index);
+        node.setOnMousePressed(event -> {});
+        node.setOnMouseReleased(event -> {});
+        node.setOnMouseDragged(event -> {});
+        // node.setOnDragDetected(event -> {});
+        node.setOnDragOver(event -> {});
+        node.setOnDragDropped(event -> {});
+        node.setOnDragDone(DragEvent::consume);
+    }
 
         @FXML
         private void draggableOnMousePressed(MouseEvent event, Node node, int index) {
@@ -172,31 +186,38 @@ public class TableBuilderSceneController extends Controller {
                         imageView1 = new ImageView(new Image("images/meubles/planche_glow.png")); // glowing image
                         draggablePane1.getChildren().remove(0);
                         draggablePane1.getChildren().add(imageView1);
+                        makeUndraggable(draggablePane1, index);
                     }
                     case 1 -> {
                         imageView2 = new ImageView(new Image("images/meubles/pied_glow.png")); // glowing image
                         draggablePane2.getChildren().remove(0);
                         draggablePane2.getChildren().add(imageView2);
+                        makeUndraggable(draggablePane2, index);
                     }
                     case 2 -> {
                         imageView3 = new ImageView(new Image("images/meubles/pied_glow.png")); // glowing image
                         draggablePane3.getChildren().remove(0);
                         draggablePane3.getChildren().add(imageView3);
+                        makeUndraggable(draggablePane3, index);
                     }
                     case 3 -> {
                         imageView4 = new ImageView(new Image("images/meubles/pied_glow.png")); // glowing image
                         draggablePane4.getChildren().remove(0);
                         draggablePane4.getChildren().add(imageView4);
+                        makeUndraggable(draggablePane4, index);
                     }
                     case 4 -> {
                         imageView5 = new ImageView(new Image("images/meubles/pied_glow.png")); // glowing image
                         draggablePane5.getChildren().remove(0);
                         draggablePane5.getChildren().add(imageView5);
+                        makeUndraggable(draggablePane5, index);
                     }
                     default -> {
                     }
                 }
-            } else {
+            }
+            /*
+            else {
                 // Change to non glowing image because it's not in the right place
                 switch (index) {
                     case 0 -> {
@@ -228,6 +249,7 @@ public class TableBuilderSceneController extends Controller {
                     }
                 }
             }
+             */
         }
 
         @FXML
