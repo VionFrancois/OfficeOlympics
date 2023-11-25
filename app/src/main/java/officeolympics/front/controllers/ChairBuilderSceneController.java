@@ -76,6 +76,9 @@ public class ChairBuilderSceneController extends Controller {
             "Je réessayerais une autre fois"
     );
 
+    private MobelComponent mobelComponent1, mobelComponent2, mobelComponent3, mobelComponent4, mobelComponent5, mobelComponent6, mobelComponent7, mobelComponent8;
+
+
     @FXML
     private void initialize() {
         ArrayList<MobelComponent> mobelComponents = new ArrayList<>();
@@ -86,35 +89,35 @@ public class ChairBuilderSceneController extends Controller {
         roulettesTargetLocations.add(new MobelComponentLocation(719, 666));
         roulettesTargetLocations.add(new MobelComponentLocation(809, 627));
 
-        MobelComponent mobelComponent1 = new MobelComponent(0,
+        mobelComponent1 = new MobelComponent(0,
                 new MobelComponentLocation(draggablePane1.getLayoutX(), draggablePane1.getLayoutY()),
                 new MobelComponentLocation(318, -7));
         mobelComponents.add(mobelComponent1);
-        MobelComponent mobelComponent2 = new MobelComponent(1,
+        mobelComponent2 = new MobelComponent(1,
                 new MobelComponentLocation(draggablePane2.getLayoutX(), draggablePane2.getLayoutY()),
                 new MobelComponentLocation(434, 480));
         mobelComponents.add(mobelComponent2);
-        MobelComponent mobelComponent3 = new MobelComponent(2,
+        mobelComponent3 = new MobelComponent(2,
                 new MobelComponentLocation(draggablePane3.getLayoutX(), draggablePane3.getLayoutY()),
                 new MobelComponentLocation(411, 196));
         mobelComponents.add(mobelComponent3);
-        MobelComponent mobelComponent4 = new MobelComponent(3,
+        mobelComponent4 = new MobelComponent(3,
                 new MobelComponentLocation(draggablePane4.getLayoutX(), draggablePane4.getLayoutY()),
                 new MobelComponentLocation(565, 175));
         mobelComponents.add(mobelComponent4);
-        MobelComponent mobelComponent5 = new MobelComponent(4,
+        mobelComponent5 = new MobelComponent(4,
                 new MobelComponentLocation(draggablePane5.getLayoutX(), draggablePane5.getLayoutY()),
                 roulettesTargetLocations);
         mobelComponents.add(mobelComponent5);
-        MobelComponent mobelComponent6 = new MobelComponent(5,
+        mobelComponent6 = new MobelComponent(5,
                 new MobelComponentLocation(draggablePane6.getLayoutX(), draggablePane6.getLayoutY()),
                 roulettesTargetLocations);
         mobelComponents.add(mobelComponent6);
-        MobelComponent mobelComponent7 = new MobelComponent(6,
+        mobelComponent7 = new MobelComponent(6,
                 new MobelComponentLocation(draggablePane7.getLayoutX(), draggablePane7.getLayoutY()),
                 roulettesTargetLocations);
         mobelComponents.add(mobelComponent7);
-        MobelComponent mobelComponent8 = new MobelComponent(7,
+        mobelComponent8 = new MobelComponent(7,
                 new MobelComponentLocation(draggablePane8.getLayoutX(), draggablePane8.getLayoutY()),
                 roulettesTargetLocations);
         mobelComponents.add(mobelComponent8);
@@ -223,21 +226,29 @@ public class ChairBuilderSceneController extends Controller {
                     imageView1 = new ImageView(new Image("images/meubles/chair_glow.png")); // glowing image
                     draggablePane1.getChildren().remove(0);
                     draggablePane1.getChildren().add(imageView1);
+                    draggablePane1.setLayoutX(mobelComponent1.getTargetLocation().getX());
+                    draggablePane1.setLayoutY(mobelComponent1.getTargetLocation().getY());
                 }
                 case 1 -> {
                     imageView2 = new ImageView(new Image("images/meubles/chair_base_glow.png")); // glowing image
                     draggablePane2.getChildren().remove(0);
                     draggablePane2.getChildren().add(imageView2);
+                    draggablePane2.setLayoutX(mobelComponent2.getTargetLocation().getX());
+                    draggablePane2.setLayoutY(mobelComponent2.getTargetLocation().getY());
                 }
                 case 2 -> {
                     imageView3 = new ImageView(new Image("images/meubles/chair_armrest_l_glow.png")); // glowing image
                     draggablePane3.getChildren().remove(0);
                     draggablePane3.getChildren().add(imageView3);
+                    draggablePane3.setLayoutX(mobelComponent3.getTargetLocation().getX());
+                    draggablePane3.setLayoutY(mobelComponent3.getTargetLocation().getY());
                 }
                 case 3 -> {
                     imageView4 = new ImageView(new Image("images/meubles/chair_armrest_r_glow.png")); // glowing image
                     draggablePane4.getChildren().remove(0);
                     draggablePane4.getChildren().add(imageView4);
+                    draggablePane4.setLayoutX(mobelComponent4.getTargetLocation().getX());
+                    draggablePane4.setLayoutY(mobelComponent4.getTargetLocation().getY());
                 }
                 case 4 -> {
                     imageView5 = new ImageView(new Image("images/meubles/chair_wheel_glow.png")); // glowing image
