@@ -13,7 +13,7 @@ public class MainScreen2Controller extends Controller {
 
     @FXML
     void handleNextPage(MouseEvent event) {
-        this.pageFlip((Group) Scenes.MainScreen2Scene.getRoot(), Scenes.Page1Scene);
+        this.pageFlip((Group) Scenes.MainScreen2Scene.getRoot(), Scenes.DragAndDropScene);
     }
 
 }
