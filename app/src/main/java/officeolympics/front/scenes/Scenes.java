@@ -13,5 +13,6 @@ public class Scenes {
             DragAndDropScene,
             MainScreen2Scene,
             YearsLaterScene,
-            EndScreenScene;
+            EndScreenScene,
+            Page1Scene;
 }

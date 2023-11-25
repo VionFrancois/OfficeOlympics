@@ -33,6 +33,7 @@ public class Main extends Application {
         Scenes.MainScreenScene = SceneLoader.load("MainScreenScene.fxml");
         Scenes.YearsLaterScene = SceneLoader.load("YearsLaterScene.fxml");
         //Scenes.EndScreenScene = SceneLoader.load("EndScreenScene.fxml");
+        Scenes.Page1Scene = SceneLoader.load("Page1Scene.fxml");
 
         Flow.add(Scenes.MainScreenScene);
 
