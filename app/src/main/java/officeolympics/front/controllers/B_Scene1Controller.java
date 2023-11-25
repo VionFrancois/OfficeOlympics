@@ -8,6 +8,7 @@ import javafx.scene.web.WebView;
 import officeolympics.Main;
 import officeolympics.front.scenes.Scenes;
 
+import javax.swing.text.html.ImageView;
 import java.util.List;
 import java.util.Objects;
 import java.util.concurrent.locks.Lock;
@@ -23,8 +24,14 @@ public class B_Scene1Controller extends Controller {
             "Stanley, développeur junior chez Odoo, s’entraîne d’arrache pied pour gagner cette prochaine édition."
     );
 
+    private final List<String> images = List.of(
+            "leaderboard_dialog.png",
+            ".png",
+            ".png"
+    );
+
     @FXML
-    public WebView dialog_web;
+    public ImageView image;
 
     private int index = 0;
 
@@ -38,7 +45,7 @@ public class B_Scene1Controller extends Controller {
 
     public void handlePaneMouseClicked(MouseEvent mouseEvent) {
         if(index >= this.texts.size()){
-            this.pageFlip((Group) Scenes.B_Scene1.getRoot(), Scenes.Page1Scene);
+            this.pageFlip((Group) Scenes.B_Scene1.getRoot(), Scenes.DragAndDropScene);
             return;
         }
         // If another text is already being displayed, we stop it and display the next one
