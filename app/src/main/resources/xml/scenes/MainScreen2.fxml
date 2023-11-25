@@ -11,12 +11,7 @@
          <font>
             <Font name="IKEASans-Heavy" size="72.0" />
          </font></Label>
-
-      <ImageView fx:id="image1" fitHeight="189.0" fitWidth="232.0" layoutX="165.0" layoutY="150.0" pickOnBounds="true" preserveRatio="true">
-         <image>
-            <Image url="@/images/bonhomme_flame.png" />
-         </image>
-      </ImageView>
+      <ImageView fitHeight="150.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true" />
 
    </children>
 </AnchorPane>
