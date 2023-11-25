@@ -183,6 +183,16 @@ public class ChairBuilderSceneController extends Controller {
         System.out.println("=======");
         System.out.println(mobelLayout.isLayoutFilled());
         System.out.println("=======");
+        checkIsOnTargetByIndex(index);
+        if (mobelLayout.isLayoutFilled()) {
+            // TODO : show dialog
+        }
+
+        // Put the immovable piece to front at all time
+        draggablePane2.toFront();
+    }
+
+    private void checkIsOnTargetByIndex(int index) {
         if (mobelLayout.getMobelComponents().get(index).isOnTarget()) {
 
             if (!isDialogOpen && !wasDialogOpen){
@@ -286,12 +296,6 @@ public class ChairBuilderSceneController extends Controller {
                 }
             }
         }
-        if (mobelLayout.isLayoutFilled()) {
-            anchorPane.setStyle("-fx-background-color: rgba(0, 150, 0, 0.2);");
-        }
-
-        // Put the immovable piece to front at all time
-        draggablePane2.toFront();
     }
 
     @FXML
