@@ -13,7 +13,7 @@
         </ImageView>
         <ImageView fx:id="image2" fitHeight="407.0" fitWidth="606.0" layoutX="587.0" layoutY="91.0">
             <image>
-                <Image url="@/images/bonhommePC.png" />
+                <Image url="@/images/bonhommePC_t.png" />
             </image>
         </ImageView>
     </Pane>

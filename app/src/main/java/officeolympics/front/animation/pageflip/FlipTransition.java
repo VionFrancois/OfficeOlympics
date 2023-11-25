@@ -9,6 +9,7 @@ import javafx.scene.paint.CycleMethod;
 import javafx.scene.paint.LinearGradient;
 import javafx.scene.shape.Rectangle;
 import officeolympics.Main;
+import officeolympics.front.animation.FadeInTransition;
 import officeolympics.front.animation.threads.FlipThread;
 import javafx.util.Duration;
 import javafx.scene.image.ImageView;
