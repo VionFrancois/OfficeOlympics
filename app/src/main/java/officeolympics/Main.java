@@ -35,6 +35,7 @@ public class Main extends Application {
         Scenes.YearsLaterScene = SceneLoader.load("YearsLaterScene.fxml");
         TextCinematicController.play(Scenes.YearsLaterScene);
         //Scenes.EndScreenScene = SceneLoader.load("EndScreenScene.fxml");
+        Scenes.Page1Scene = SceneLoader.load("Page1Scene.fxml");
 
         Flow.add(Scenes.MainScreenScene);
 

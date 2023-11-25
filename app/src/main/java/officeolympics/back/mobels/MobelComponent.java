@@ -14,4 +14,28 @@ public class MobelComponent {
     public boolean isOnTarget() {
         return currentLocation.equals(targetLocation);
     }
+
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
+    }
+
+    public MobelComponentLocation getCurrentLocation() {
+        return currentLocation;
+    }
+
+    public void setCurrentLocation(MobelComponentLocation currentLocation) {
+        this.currentLocation = currentLocation;
+    }
+
+    public MobelComponentLocation getTargetLocation() {
+        return targetLocation;
+    }
+
+    public void setTargetLocation(MobelComponentLocation targetLocation) {
+        this.targetLocation = targetLocation;
+    }
 }

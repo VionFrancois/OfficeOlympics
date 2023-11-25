@@ -8,11 +8,11 @@ import javafx.scene.Scene;
  * @author Arnaud MOREAU
  */
 public class Scenes {
-    public static Scene MainScreenScene;
-
-    public static Scene MainScreen2Scene;
-
-    public static Scene YearsLaterScene;
-
-    public static Scene EndScreenScene;
+    public static Scene
+            MainScreenScene,
+            DragAndDropScene,
+            MainScreen2Scene,
+            YearsLaterScene,
+            EndScreenScene,
+            Page1Scene;
 }
