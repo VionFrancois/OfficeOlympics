@@ -12,6 +12,7 @@ import javafx.scene.text.Text;
 import officeolympics.back.mobels.MobelComponent;
 import officeolympics.back.mobels.MobelComponentLocation;
 import officeolympics.back.mobels.MobelLayout;
+import officeolympics.front.scenes.Scenes;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -67,7 +68,13 @@ public class ChairBuilderSceneController extends Controller {
 
     private MobelLayout mobelLayout;
 
-    private boolean isDialogOpen = false, wasDialogOpen = false;
+    private boolean isDialogOpen = false, endDialog = false, wasDialogOpen = false;
+    private int dialogIndex = 0;
+    private final List<String> dialogList = List.of(
+            "Argh.. C'est n'importe quoi ce manuel...",
+            "Comment ça se fait que j’arrive pas à dépasser les suédois ? J’ai pourtant fait le meuble en moins de 4 minutes...",
+            "Je réessayerais une autre fois"
+    );
 
     @FXML
     private void initialize() {
@@ -185,7 +192,12 @@ public class ChairBuilderSceneController extends Controller {
         System.out.println("=======");
         checkIsOnTargetByIndex(index);
         if (mobelLayout.isLayoutFilled()) {
-            // TODO : show dialog
+            draggable_dialog.setVisible(true);
+            draggable_dialog.setDisable(false);
+            draggable_dialog.toFront();
+            TextCinematicController.play(dialogList.get(dialogIndex), dialog);
+            dialogIndex += 1;
+            endDialog = true;
         }
 
         // Put the immovable piece to front at all time
@@ -195,13 +207,14 @@ public class ChairBuilderSceneController extends Controller {
     private void checkIsOnTargetByIndex(int index) {
         if (mobelLayout.getMobelComponents().get(index).isOnTarget()) {
 
-            if (!isDialogOpen && !wasDialogOpen){
+            if (!isDialogOpen && !endDialog && !wasDialogOpen) {
                 isDialogOpen = true;
                 wasDialogOpen = true;
                 draggable_dialog.setVisible(true);
                 draggable_dialog.setDisable(false);
                 draggable_dialog.toFront();
-                TextCinematicController.play("Bravo, vous avez place votre premiere piece !", dialog);
+                TextCinematicController.play(dialogList.get(dialogIndex), dialog);
+                dialogIndex += 1;
             }
 
             // Change to glowing image because it's in the right place
@@ -350,11 +363,26 @@ public class ChairBuilderSceneController extends Controller {
 
     public void dialogOnMouseClicked(MouseEvent mouseEvent) {
 
-        if (isDialogOpen){
+        if (dialogIndex >= dialogList.size()){
+            return;
+        }
+
+        if (isDialogOpen && !endDialog){
             isDialogOpen = false;
-            wasDialogOpen = true;
             draggable_dialog.setVisible(false);
             draggable_dialog.setDisable(true);
+        }
+
+        else if (isDialogOpen){
+            if(TextCinematicController.isRunning()){
+                TextCinematicController.stop();
+                TextCinematicController.setDelayBefore(0);
+            }
+            else {
+                TextCinematicController.setDelayBefore(200);
+            }
+            TextCinematicController.play(dialogList.get(dialogIndex), dialog);
+            dialogIndex += 1;
         }
 
     }
