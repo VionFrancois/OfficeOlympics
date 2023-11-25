@@ -3,6 +3,7 @@ package officeolympics.front.controllers;
 import javafx.fxml.FXML;
 import javafx.scene.Group;
 import javafx.scene.control.Label;
+import javafx.scene.text.Text;
 import officeolympics.front.navigation.Flow;
 import officeolympics.front.scenes.SceneLoader;
 import officeolympics.front.scenes.Scenes;
@@ -10,11 +11,11 @@ import officeolympics.front.scenes.Scenes;
 public class YearsLaterController extends Controller{
 
     @FXML
-    Label yearsLaterLabel;
+    Text yearsLaterText;
 
     @FXML
     void initialize() {
-        this.yearsLaterLabel.setText("4 years later...");
+        this.yearsLaterText.setText("4 years later...");
     }
 
     @FXML

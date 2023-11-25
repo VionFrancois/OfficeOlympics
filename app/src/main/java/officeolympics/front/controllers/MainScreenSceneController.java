@@ -25,7 +25,7 @@ public class MainScreenSceneController extends Controller implements BackButtonN
         // Main.setScene(Flow.back());
         // Navigate to the 4 years later scene
 
-        this.pageFlip((Group) Flow.pop().getRoot(), Scenes.YearsLaterScene);
+        this.pageFlip((Group) Scenes.MainScreenScene.getRoot(), Scenes.YearsLaterScene);
     }
 
     @Override
