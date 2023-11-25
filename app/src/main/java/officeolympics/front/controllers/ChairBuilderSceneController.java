@@ -74,7 +74,7 @@ public class ChairBuilderSceneController extends Controller {
     private final List<String> dialogList = List.of(
             "Argh.. C'est n'importe quoi ce manuel, on voit pas le bon côté...",
             "Comment ça se fait que j’arrive pas à dépasser les suédois ? J’ai pourtant fait le meuble en moins de 4 minutes...",
-            "Je réessayerais une autre fois"
+            "Je réessayerai une autre fois"
     );
 
     private MobelComponent mobelComponent1, mobelComponent2, mobelComponent3, mobelComponent4, mobelComponent5, mobelComponent6, mobelComponent7, mobelComponent8;
@@ -210,12 +210,13 @@ public class ChairBuilderSceneController extends Controller {
         System.out.println("=======");
         checkIsOnTargetByIndex(index);
         if (mobelLayout.isLayoutFilled()) {
+            endDialog = true;
+            isDialogOpen = true;
             draggable_dialog.setVisible(true);
             draggable_dialog.setDisable(false);
             draggable_dialog.toFront();
             TextCinematicController.play(dialogList.get(dialogIndex), dialog);
             dialogIndex += 1;
-            endDialog = true;
         }
 
         // Put the immovable piece to front at all time
@@ -410,8 +411,7 @@ public class ChairBuilderSceneController extends Controller {
             draggable_dialog.setVisible(false);
             draggable_dialog.setDisable(true);
         }
-
-        else if (isDialogOpen){
+        else if (isDialogOpen && endDialog){
             if(TextCinematicController.isRunning()){
                 TextCinematicController.stop();
                 TextCinematicController.setDelayBefore(0);
