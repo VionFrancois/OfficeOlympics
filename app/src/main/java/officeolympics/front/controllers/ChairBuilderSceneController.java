@@ -153,10 +153,12 @@ public class ChairBuilderSceneController extends Controller {
         for (int i = 0; i < draggablePanes.size(); i++) {
             makeDraggable(draggablePanes.get(i), i);
         }
+
+        makeUndraggable(draggablePane2, 1);
     }
 
     private void makeDraggable(Pane node, int index) {
-        if (index == 1) return; // The base of the chair is immovable
+        if(index == 1) return; // The base of the chair is immovable
         System.out.println("make draggable : ");
         System.out.println(node);
         System.out.println(index);
@@ -220,7 +222,7 @@ public class ChairBuilderSceneController extends Controller {
         }
 
         // Put the immovable piece to front at all time
-        draggablePane2.toFront();
+        draggablePane2.toBack();
     }
 
     private void checkIsOnTargetByIndex(int index) {
