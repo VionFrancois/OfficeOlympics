@@ -19,13 +19,15 @@ public class Scenes {
             YearsLaterScene,
             YearsLaterScene2,
             EndScreenScene,
+            EndScreen2Scene,
             B_Scene1,
             B_Scene2,
             B_Scene3,
             Page1Scene,
             AlexDoorScene,
             TableBuilderScene,
-            DrawersScene;
+            DrawersScene,
+            TheEndScene;
 
     public static Image getImage(String name) {
         return new Image(Objects.requireNonNull(Main.class.getResourceAsStream("/images/" + name)));

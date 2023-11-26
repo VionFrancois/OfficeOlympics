@@ -54,7 +54,7 @@ public class B_Scene2Controller extends Controller{
 
     public void handlePaneMouseClicked(MouseEvent mouseEvent) {
         if(index >= images.size() - 1 && indexText >= this.imagesToText.get(index).size()){
-            this.pageFlip((Group) Scenes.B_Scene2.getRoot(), Scenes.DrawersScene);
+            this.pageFlip((Group) Scenes.B_Scene2.getRoot(), Scenes.ChairBuilderScene);
             return;
         }
         // If another text is already being displayed, we stop it and display the next one
