@@ -17,9 +17,11 @@ public class Scenes {
             ChairBuilderScene,
             MainScreen2Scene,
             YearsLaterScene,
+            YearsLaterScene2,
             EndScreenScene,
             B_Scene1,
             B_Scene2,
+            B_Scene3,
             Page1Scene,
             AlexDoorScene,
             TableBuilderScene;

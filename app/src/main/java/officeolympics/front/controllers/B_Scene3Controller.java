@@ -5,33 +5,27 @@ import javafx.scene.Group;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.text.Text;
+import officeolympics.front.scenes.SceneLoader;
 import officeolympics.front.scenes.Scenes;
 
 import java.util.List;
 import java.util.Map;
 
-public class B_Scene2Controller extends Controller{
+public class B_Scene3Controller extends Controller{
 
     @FXML
     public Text paragraph;
 
     private final Map<Integer, List<String>> imagesToText = Map.of(
-            0, List.of("Je ne comprends pas... Comment font-ils pour toujours gagner ?"),
-            1, List.of(
-                    "*En rentrant dans le couloir des vestiaires, Stanley aperçut un manuel qui trainait près de la porte des suédois.*",
-                    "*Il le reconnut tout de suite, il s’agit bien évidemment de SMÖRBOLL, le meuble qu’il vient de construire pour les JO.*",
-                    "*Mais il remarqua quelque chose de spécial.*"
-            ),
-            2, List.of(
-                    "Mais, il ne fait que 4 pages ? Comment est-ce possible ?",
-                    "Pour en avoir le coeur net, Stanley se rendit dans le vestiaire des suédois une fois tout le monde parti."
+            0, List.of(
+                    "En rentrant chez lui, Stanley compara leurs manuels et celui qu’on lui a donné pour l’épreuve.",
+                    "Pour le même meuble SMÖRBOLL, leurs manuels sont beaucoup moins compliqués.",
+                    "*Il a donc 4 ans pour se procurer des manuels suédois des autres meubles afin de les battre à la prochaine édition.*"
             )
     );
 
     private final List<String> images = List.of(
-            "leaderboard_end.png",
-            "smorbol.png",
-            "confusion.png"
+            "livrets.png"
     );
 
     @FXML
@@ -54,7 +48,15 @@ public class B_Scene2Controller extends Controller{
 
     public void handlePaneMouseClicked(MouseEvent mouseEvent) {
         if(index >= images.size() - 1 && indexText >= this.imagesToText.get(index).size()){
-            this.pageFlip((Group) Scenes.B_Scene2.getRoot(), Scenes.B_Scene3);
+            Scenes.YearsLaterScene2 = SceneLoader.load("YearsLaterScene2.fxml");
+
+            this.pageFlip((Group) Scenes.B_Scene3.getRoot(), Scenes.YearsLaterScene2);
+            if(TextCinematicController.isRunning()){
+                TextCinematicController.stop();
+            }
+            TextCinematicController.setDelayBefore(1500);
+            TextCinematicController.setTextSpeed(100);
+            TextCinematicController.play(Scenes.YearsLaterScene2);
             return;
         }
         // If another text is already being displayed, we stop it and display the next one

@@ -243,7 +243,7 @@ public class AlexDoorSceneController extends Controller {
             Scenes.YearsLaterScene = SceneLoader.load("YearsLaterScene.fxml");
 
             this.pageFlip((Group) Scenes.AlexDoorScene.getRoot(), Scenes.YearsLaterScene);
-            TextCinematicController.setDelayBefore(2000);
+            TextCinematicController.setDelayBefore(1500);
             TextCinematicController.setTextSpeed(100);
             TextCinematicController.play(Scenes.YearsLaterScene);
 
