@@ -1,71 +1,65 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.scene.control.*?>
 <?import javafx.scene.image.*?>
 <?import javafx.scene.layout.*?>
-<?import javafx.scene.text.Font?>
-<?import javafx.scene.text.Text?>
-<AnchorPane prefHeight="720.0" prefWidth="1280.0" xmlns="http://javafx.com/javafx/17.0.2-ea"
-            xmlns:fx="http://javafx.com/fxml/1"
-            style="-fx-background-color: white"
-            fx:controller="officeolympics.front.controllers.ChairBuilderSceneController">
-    <AnchorPane fx:id="anchorPane"
-                onMouseClicked="#cheatCode"
-                prefHeight="200.0" prefWidth="200.0" style="-fx-border-color: black; -fx-border-width: 2;"
-                AnchorPane.bottomAnchor="5.0" AnchorPane.leftAnchor="5.0" AnchorPane.rightAnchor="5.0"
-                AnchorPane.topAnchor="5.0">
+<?import javafx.scene.text.*?>
+
+<AnchorPane prefHeight="720.0" prefWidth="1280.0" style="-fx-background-color: white" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="officeolympics.front.controllers.ChairBuilderSceneController">
+    <AnchorPane fx:id="anchorPane" onMouseClicked="#cheatCode" prefHeight="200.0" prefWidth="200.0" style="-fx-border-color: black; -fx-border-width: 2; -fx-background-image: url('/images/JO_logo_op.png'); -fx-background-repeat: no-repeat; -fx-background-size: 100% 100%; -fx-background-position: center center;" AnchorPane.bottomAnchor="5.0" AnchorPane.leftAnchor="5.0" AnchorPane.rightAnchor="5.0" AnchorPane.topAnchor="5.0">
         <Pane fx:id="draggablePane1">
             <ImageView fx:id="imageView1" pickOnBounds="true" preserveRatio="true">
-                <Image url="@/images/meubles/chair.png"/>
+                <Image url="@/images/meubles/chair.png" />
             </ImageView>
         </Pane>
         <Pane fx:id="draggablePane2" layoutX="434.0" layoutY="480.0">
             <ImageView fx:id="imageView2" pickOnBounds="true" preserveRatio="true">
-                <Image url="@/images/meubles/chair_base_glow.png"/>
+                <Image url="@/images/meubles/chair_base_glow.png" />
             </ImageView>
         </Pane>
         <Pane fx:id="draggablePane3">
             <ImageView fx:id="imageView3" pickOnBounds="true" preserveRatio="true">
-                <Image url="@/images/meubles/chair_armrest_l.png"/>
+                <Image url="@/images/meubles/chair_armrest_l.png" />
             </ImageView>
         </Pane>
         <Pane fx:id="draggablePane4">
             <ImageView fx:id="imageView4" pickOnBounds="true" preserveRatio="true">
-                <Image url="@/images/meubles/chair_armrest_r.png"/>
+                <Image url="@/images/meubles/chair_armrest_r.png" />
             </ImageView>
         </Pane>
         <Pane fx:id="draggablePane5">
             <ImageView fx:id="imageView5" pickOnBounds="true" preserveRatio="true">
-                <Image url="@/images/meubles/chair_wheel.png"/>
+                <Image url="@/images/meubles/chair_wheel.png" />
             </ImageView>
         </Pane>
         <Pane fx:id="draggablePane6">
             <ImageView fx:id="imageView6" pickOnBounds="true" preserveRatio="true">
-                <Image url="@/images/meubles/chair_wheel.png"/>
+                <Image url="@/images/meubles/chair_wheel.png" />
             </ImageView>
         </Pane>
         <Pane fx:id="draggablePane7">
             <ImageView fx:id="imageView7" pickOnBounds="true" preserveRatio="true">
-                <Image url="@/images/meubles/chair_wheel.png"/>
+                <Image url="@/images/meubles/chair_wheel.png" />
             </ImageView>
         </Pane>
         <Pane fx:id="draggablePane8">
             <ImageView fx:id="imageView8" pickOnBounds="true" preserveRatio="true">
-                <Image url="@/images/meubles/chair_wheel.png"/>
+                <Image url="@/images/meubles/chair_wheel.png" />
             </ImageView>
         </Pane>
     </AnchorPane>
-    <BorderPane id="draggable-dialog" fx:id="draggable_dialog" disable="true" onMouseClicked="#dialogOnMouseClicked"
-                prefHeight="200.0" prefWidth="200.0"
-                style="-fx-border-color: black; -fx-border-width: 1; -fx-border-radius: 10; -fx-background-color: rgb(255, 255, 255);"
-                visible="false" AnchorPane.bottomAnchor="40.0" AnchorPane.leftAnchor="50.0"
-                AnchorPane.rightAnchor="50.0">
+    <BorderPane id="draggable-dialog" fx:id="draggable_dialog" disable="true" onMouseClicked="#dialogOnMouseClicked" prefHeight="200.0" prefWidth="200.0" style="-fx-border-color: black; -fx-border-width: 1; -fx-border-radius: 10; -fx-background-color: rgb(255, 255, 255);" visible="false" AnchorPane.bottomAnchor="40.0" AnchorPane.leftAnchor="50.0" AnchorPane.rightAnchor="50.0">
         <center>
-            <Text id="text-cinematic" fx:id="dialog" strokeType="OUTSIDE" strokeWidth="0.0" text="Text"
-                  wrappingWidth="1100.0" BorderPane.alignment="CENTER">
+            <Text id="text-cinematic" fx:id="dialog" strokeType="OUTSIDE" strokeWidth="0.0" text="Text" wrappingWidth="1100.0" BorderPane.alignment="CENTER">
                 <font>
-                    <Font name="IKEASans-Heavy" size="36.0"/>
+                    <Font name="IKEASans-Heavy" size="36.0" />
                 </font>
             </Text>
         </center>
     </BorderPane>
+   <Label text="9" AnchorPane.leftAnchor="25.0" AnchorPane.topAnchor="25.0">
+      <font>
+         <Font name="IKEASans-Heavy" size="16.0" />
+      </font>
+   </Label>
 </AnchorPane>

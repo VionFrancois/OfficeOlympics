@@ -72,9 +72,8 @@ public class ChairBuilderSceneController extends Controller {
     private boolean isDialogOpen = false, endDialog = false, wasDialogOpen = false;
     private int dialogIndex = 0;
     private final List<String> dialogList = List.of(
-            "Argh.. C'est n'importe quoi ce manuel, on voit pas le bon côté...",
-            "Comment ça se fait que j’arrive pas à dépasser les suédois ? J’ai pourtant fait le meuble en moins de 4 minutes...",
-            "Je réessayerai une autre fois"
+            "Hahaha, c'est tout de suite plus simple...",
+            "Ce manuel est genial !"
     );
 
     private MobelComponent mobelComponent1, mobelComponent2, mobelComponent3, mobelComponent4, mobelComponent5, mobelComponent6, mobelComponent7, mobelComponent8;
@@ -232,6 +231,8 @@ public class ChairBuilderSceneController extends Controller {
                 draggable_dialog.setVisible(true);
                 draggable_dialog.setDisable(false);
                 draggable_dialog.toFront();
+                TextCinematicController.setDelayBefore(200);
+                TextCinematicController.setTextSpeed(35);
                 TextCinematicController.play(dialogList.get(dialogIndex), dialog);
                 dialogIndex += 1;
             }
@@ -402,7 +403,7 @@ public class ChairBuilderSceneController extends Controller {
     public void dialogOnMouseClicked(MouseEvent mouseEvent) {
 
         if (dialogIndex >= dialogList.size()){
-            this.pageFlip((Group) Scenes.ChairBuilderScene.getRoot(), Scenes.TableBuilderScene);
+            this.pageFlip((Group) Scenes.ChairBuilderScene.getRoot(), Scenes.EndScreenScene);
             return;
         }
 
@@ -427,7 +428,7 @@ public class ChairBuilderSceneController extends Controller {
     @FXML
     private void cheatCode(MouseEvent event) {
         if (event.getButton().toString().equals("MIDDLE")) {
-            this.pageFlip((Group) Scenes.ChairBuilderScene.getRoot(), Scenes.TableBuilderScene);
+            this.pageFlip((Group) Scenes.ChairBuilderScene.getRoot(), Scenes.EndScreenScene);
         }
     }
 }

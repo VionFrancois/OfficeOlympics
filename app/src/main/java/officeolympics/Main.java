@@ -35,7 +35,7 @@ public class Main extends Application {
         Scenes.ChairBuilderScene = SceneLoader.load("ChairBuilderScene.fxml");
         Scenes.TableBuilderScene = SceneLoader.load("TableBuilderScene.fxml");
         Scenes.MainScreen2Scene = SceneLoader.load("MainScreen2Scene.fxml");
-        //Scenes.EndScreenScene = SceneLoader.load("EndScreenScene.fxml");
+        Scenes.EndScreenScene = SceneLoader.load("EndScreenScene.fxml");
         Scenes.Page1Scene = SceneLoader.load("Page1.fxml");
         Scenes.B_Scene1 = SceneLoader.load("B_Scene1.fxml");
         Scenes.B_Scene2 = SceneLoader.load("B_Scene2.fxml");
