@@ -348,5 +348,13 @@ public class TableBuilderSceneController extends Controller {
         }
 
     }
+
+
+    public void onMouseClicked(MouseEvent mouseEvent) {
+        if(mouseEvent.getButton().toString().equals("MIDDLE")){
+            this.pageFlip((Group) Scenes.TableBuilderScene.getRoot(), Scenes.B_Scene2);
+            return;
+        }
+    }
 }
 

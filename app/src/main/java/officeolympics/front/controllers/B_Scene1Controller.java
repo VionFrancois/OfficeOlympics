@@ -45,6 +45,12 @@ public class B_Scene1Controller extends Controller {
     }
 
     public void handlePaneMouseClicked(MouseEvent mouseEvent) {
+
+        if(mouseEvent.getButton().toString().equals("MIDDLE")){
+            this.pageFlip((Group) Scenes.B_Scene1.getRoot(), Scenes.AlexDoorScene);
+            return;
+        }
+
         if(index >= NUMBER_OF_PAGES){
             this.pageFlip((Group) Scenes.B_Scene1.getRoot(), Scenes.AlexDoorScene);
             return;

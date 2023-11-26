@@ -268,4 +268,15 @@ public class AlexDoorSceneController extends Controller {
         }
 
     }
+
+    public void onMouseClicked(MouseEvent mouseEvent) {
+        if(mouseEvent.getButton().toString().equals("MIDDLE")){
+            Scenes.YearsLaterScene = SceneLoader.load("YearsLaterScene.fxml");
+
+            this.pageFlip((Group) Scenes.AlexDoorScene.getRoot(), Scenes.YearsLaterScene);
+            TextCinematicController.setDelayBefore(1500);
+            TextCinematicController.setTextSpeed(100);
+            TextCinematicController.play(Scenes.YearsLaterScene);
+        }
+    }
 }
