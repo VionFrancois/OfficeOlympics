@@ -11,10 +11,6 @@ import officeolympics.front.scenes.Scenes;
 
 public class DrawersController extends Controller {
     @FXML
-    AnchorPane anchorPane;
-    @FXML
-    Pane drawersPane;
-    @FXML
     ImageView drawersImageView;
     int count = 0;
 
@@ -44,36 +40,26 @@ public class DrawersController extends Controller {
 
     @FXML
     private void firstDrawerClicked() {
-        drawersImageView = new ImageView(new Image("images/alex1.png"));
-        drawersPane.getChildren().remove(0);
-        drawersPane.getChildren().add(drawersImageView);
+        drawersImageView.setImage(new Image("images/alex1.png"));
     }
 
     @FXML
     private void secondDrawerClicked() {
-        drawersImageView = new ImageView(new Image("images/alex2.png"));
-        drawersPane.getChildren().remove(0);
-        drawersPane.getChildren().add(drawersImageView);
+        drawersImageView.setImage(new Image("images/alex2.png"));
     }
 
     @FXML
     private void thirdDrawerClicked() {
-        drawersImageView = new ImageView(new Image("images/alex3.png"));
-        drawersPane.getChildren().remove(0);
-        drawersPane.getChildren().add(drawersImageView);
+        drawersImageView.setImage(new Image("images/alex3.png"));
     }
 
     @FXML
     private void fourthDrawerClicked() {
-        drawersImageView = new ImageView(new Image("images/alex4.png"));
-        drawersPane.getChildren().remove(0);
-        drawersPane.getChildren().add(drawersImageView);
+        drawersImageView.setImage(new Image("images/alex4.png"));
     }
 
     @FXML
     private void fifthDrawerClicked() {
-        drawersImageView = new ImageView(new Image("images/alex5.png"));
-        drawersPane.getChildren().remove(0);
-        drawersPane.getChildren().add(drawersImageView);
+        drawersImageView.setImage(new Image("images/alex5.png"));
     }
 }
