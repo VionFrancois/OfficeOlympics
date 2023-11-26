@@ -13,6 +13,7 @@ import javafx.scene.text.Text;
 import officeolympics.back.mobels.MobelComponent;
 import officeolympics.back.mobels.MobelComponentLocation;
 import officeolympics.back.mobels.MobelLayout;
+import officeolympics.front.scenes.SceneLoader;
 import officeolympics.front.scenes.Scenes;
 
 import java.util.ArrayList;
@@ -403,6 +404,7 @@ public class ChairBuilderSceneController extends Controller {
     public void dialogOnMouseClicked(MouseEvent mouseEvent) {
 
         if (dialogIndex >= dialogList.size()){
+            Scenes.EndScreenScene = SceneLoader.load("EndScreenScene.fxml");
             this.pageFlip((Group) Scenes.ChairBuilderScene.getRoot(), Scenes.EndScreenScene);
             return;
         }
@@ -428,6 +430,7 @@ public class ChairBuilderSceneController extends Controller {
     @FXML
     private void cheatCode(MouseEvent event) {
         if (event.getButton().toString().equals("MIDDLE")) {
+            Scenes.EndScreenScene = SceneLoader.load("EndScreenScene.fxml");
             this.pageFlip((Group) Scenes.ChairBuilderScene.getRoot(), Scenes.EndScreenScene);
         }
     }

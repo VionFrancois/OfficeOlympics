@@ -23,7 +23,7 @@
       </BorderPane>
       <Label layoutX="25.0" layoutY="25.0" text="1" AnchorPane.topAnchor="25.0">
          <font>
-            <Font name="IKEASans-Heavy" size="16.0" />
+            <Font name="IKEASans-Heavy" size="50.0" />
          </font>
       </Label>
    </children>

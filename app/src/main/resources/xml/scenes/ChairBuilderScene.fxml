@@ -17,32 +17,32 @@
                 <Image url="@/images/meubles/chair_base_glow.png" />
             </ImageView>
         </Pane>
-        <Pane fx:id="draggablePane3">
+        <Pane fx:id="draggablePane3" layoutX="50.0">
             <ImageView fx:id="imageView3" pickOnBounds="true" preserveRatio="true">
                 <Image url="@/images/meubles/chair_armrest_l.png" />
             </ImageView>
         </Pane>
-        <Pane fx:id="draggablePane4">
+        <Pane fx:id="draggablePane4" layoutY="100.0">
             <ImageView fx:id="imageView4" pickOnBounds="true" preserveRatio="true">
                 <Image url="@/images/meubles/chair_armrest_r.png" />
             </ImageView>
         </Pane>
-        <Pane fx:id="draggablePane5">
+        <Pane fx:id="draggablePane5" layoutX="400.0" layoutY="20.0">
             <ImageView fx:id="imageView5" pickOnBounds="true" preserveRatio="true">
                 <Image url="@/images/meubles/chair_wheel.png" />
             </ImageView>
         </Pane>
-        <Pane fx:id="draggablePane6">
+        <Pane fx:id="draggablePane6" layoutX="450.0">
             <ImageView fx:id="imageView6" pickOnBounds="true" preserveRatio="true">
                 <Image url="@/images/meubles/chair_wheel.png" />
             </ImageView>
         </Pane>
-        <Pane fx:id="draggablePane7">
+        <Pane fx:id="draggablePane7" layoutX="250.0">
             <ImageView fx:id="imageView7" pickOnBounds="true" preserveRatio="true">
                 <Image url="@/images/meubles/chair_wheel.png" />
             </ImageView>
         </Pane>
-        <Pane fx:id="draggablePane8">
+        <Pane fx:id="draggablePane8" layoutX="350.0" layoutY="100.0">
             <ImageView fx:id="imageView8" pickOnBounds="true" preserveRatio="true">
                 <Image url="@/images/meubles/chair_wheel.png" />
             </ImageView>
@@ -59,7 +59,7 @@
     </BorderPane>
    <Label text="9" AnchorPane.leftAnchor="25.0" AnchorPane.topAnchor="25.0">
       <font>
-         <Font name="IKEASans-Heavy" size="16.0" />
+         <Font name="IKEASans-Heavy" size="50.0" />
       </font>
    </Label>
 </AnchorPane>

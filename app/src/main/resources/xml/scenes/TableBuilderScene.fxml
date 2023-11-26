@@ -7,7 +7,7 @@
 
 <AnchorPane prefHeight="720.0" prefWidth="1280.0" style="-fx-background-color: white;" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="officeolympics.front.controllers.TableBuilderSceneController">
     <AnchorPane fx:id="anchorPane" prefHeight="200.0" prefWidth="200.0" style="-fx-border-color: black; -fx-border-width: 2; -fx-background-image: url('images/JO_logo_op.png'); -fx-background-position: center center; -fx-background-repeat: no-repeat; -fx-background-size: auto;" AnchorPane.bottomAnchor="5.0" AnchorPane.leftAnchor="5.0" AnchorPane.rightAnchor="5.0" AnchorPane.topAnchor="5.0">
-        <Pane fx:id="draggablePane2" layoutX="0.0" layoutY="0.0">
+        <Pane fx:id="draggablePane2" layoutX="0.0" layoutY="80.0">
             <ImageView fx:id="imageView2" pickOnBounds="true" preserveRatio="true">
                 <Image url="@/images/meubles/pied.png" />
             </ImageView>
@@ -44,7 +44,7 @@
     </BorderPane>
    <Label text="4" AnchorPane.leftAnchor="25.0" AnchorPane.topAnchor="25.0">
       <font>
-         <Font name="IKEASans-Heavy" size="16.0" />
+         <Font name="IKEASans-Heavy" size="50.0" />
       </font>
    </Label>
 </AnchorPane>

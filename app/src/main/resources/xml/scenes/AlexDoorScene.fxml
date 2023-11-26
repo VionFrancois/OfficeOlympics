@@ -8,10 +8,12 @@
 <AnchorPane prefHeight="720.0" prefWidth="1280.0" style="-fx-background-color: white" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="officeolympics.front.controllers.AlexDoorSceneController">
     <AnchorPane fx:id="anchorPane" prefHeight="200.0" prefWidth="200.0" style="-fx-border-color: black; -fx-border-width: 2;" AnchorPane.bottomAnchor="5.0" AnchorPane.leftAnchor="5.0" AnchorPane.rightAnchor="5.0" AnchorPane.topAnchor="5.0">
         <children>
-            <Pane fx:id="draggablePane1">
-                <ImageView fx:id="imageView1" pickOnBounds="true" preserveRatio="true">
-                    <Image url="@/images/meubles/porte_placard.png" />
-                </ImageView>
+            <Pane fx:id="draggablePane1" layoutX="100.0" layoutY="100.0">
+            <children>
+                   <ImageView fx:id="imageView1" pickOnBounds="true" preserveRatio="true">
+                       <Image url="@/images/meubles/porte_placard.png" />
+                   </ImageView>
+            </children>
             </Pane>
             <Pane fx:id="draggablePane2" layoutX="500.0" layoutY="200.0">
                 <ImageView fx:id="imageView2" pickOnBounds="true" preserveRatio="true">
@@ -31,7 +33,7 @@
     </BorderPane>
    <Label text="2" AnchorPane.leftAnchor="25.0" AnchorPane.topAnchor="25.0">
       <font>
-         <Font name="IKEASans-Heavy" size="16.0" />
+         <Font name="IKEASans-Heavy" size="50.0" />
       </font>
    </Label>
 

@@ -7,17 +7,14 @@
 
 <AnchorPane prefHeight="720.0" prefWidth="1280.0" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="officeolympics.front.controllers.EndSceneController">
    <children>
-      <BorderPane prefHeight="248.0" prefWidth="239.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
-         <center>
-            <SplitPane prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER">
-               <items>
-                  <ImageView fitHeight="150.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true" />
-               </items>
-            </SplitPane>
-         </center></BorderPane>
+        <ImageView fx:id="image" fitHeight="445.0" fitWidth="1230.0" layoutX="421.0" layoutY="138.0" pickOnBounds="true" preserveRatio="true" AnchorPane.bottomAnchor="137.0" AnchorPane.leftAnchor="421.0" AnchorPane.rightAnchor="421.2505187988281" AnchorPane.topAnchor="138.0">
+                <image>
+                    <Image url="@/images/podium.png" />
+                </image>
+        </ImageView>
       <Label text="10" AnchorPane.leftAnchor="25.0" AnchorPane.topAnchor="25.0">
          <font>
-            <Font name="IKEASans-Heavy" size="16.0" />
+            <Font name="IKEASans-Heavy" size="50.0" />
          </font>
       </Label>
    </children>
