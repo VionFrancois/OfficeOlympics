@@ -14,16 +14,35 @@ public class DrawersController extends Controller {
     Pane drawersPane;
     @FXML
     ImageView drawersImageView;
+    int count = 0;
 
     @FXML
     private void drawersClicked(MouseEvent event) {
-        double x = event.getX(), y = event.getY();
-
+        System.out.println("drawers clicked");
+        switch (count) {
+            case 0 -> {
+                firstDrawerClicked();
+                count++;
+            }
+            case 1 -> {
+                secondDrawerClicked();
+                count++;
+            }
+            case 2 -> {
+                thirdDrawerClicked();
+                count++;
+            }
+            case 3 -> {
+                fourthDrawerClicked();
+                count = 0;
+                // TODO here : do whatever happens when we open the drawer containing the manuals
+            }
+        }
     }
 
     @FXML
     private void firstDrawerClicked() {
-        drawersImageView = new ImageView(new Image("images/meubles/alex1.png"));
+        drawersImageView = new ImageView(new Image("images/alex1.png"));
         drawersPane.getChildren().remove(0);
         drawersPane.getChildren().add(drawersImageView);
     }
