@@ -34,9 +34,7 @@ public class Main extends Application {
         Scenes.AlexDoorScene = SceneLoader.load("AlexDoorScene.fxml");
         Scenes.ChairBuilderScene = SceneLoader.load("ChairBuilderScene.fxml");
         Scenes.TableBuilderScene = SceneLoader.load("TableBuilderScene.fxml");
-        Scenes.YearsLaterScene = SceneLoader.load("YearsLaterScene.fxml");
         Scenes.MainScreen2Scene = SceneLoader.load("MainScreen2Scene.fxml");
-        TextCinematicController.play(Scenes.YearsLaterScene);
         //Scenes.EndScreenScene = SceneLoader.load("EndScreenScene.fxml");
         Scenes.Page1Scene = SceneLoader.load("Page1.fxml");
         Scenes.B_Scene1 = SceneLoader.load("B_Scene1.fxml");

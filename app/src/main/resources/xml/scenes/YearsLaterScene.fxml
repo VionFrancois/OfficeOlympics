@@ -3,9 +3,9 @@
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.text.*?>
 
-<AnchorPane prefHeight="720.0" prefWidth="1280.0" stylesheets="/css/text-cinematic.css" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="officeolympics.front.controllers.YearsLaterController">
+<AnchorPane onMouseClicked="#handleYearsLaterLabelClicked" prefHeight="720.0" prefWidth="1280.0" stylesheets="/css/text-cinematic.css" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="officeolympics.front.controllers.YearsLaterController" style="-fx-background-color: white">
    <children>
-      <Text fx:id="yearsLaterText" id="text-cinematic" layoutX="447.0" layoutY="383.0" strokeType="OUTSIDE" strokeWidth="0.0" text="4 Years Later">
+      <Text id="text-cinematic" fx:id="yearsLaterText" strokeType="OUTSIDE" strokeWidth="0.0" text="4 Years Later" textAlignment="CENTER" wrappingWidth="1280.0" AnchorPane.topAnchor="325.0">
          <font>
             <Font name="IKEASans-Heavy" size="64.0" />
          </font>
