@@ -38,6 +38,7 @@ public class Main extends Application {
         //Scenes.EndScreenScene = SceneLoader.load("EndScreenScene.fxml");
         Scenes.Page1Scene = SceneLoader.load("Page1.fxml");
         Scenes.B_Scene1 = SceneLoader.load("B_Scene1.fxml");
+        Scenes.B_Scene2 = SceneLoader.load("B_Scene2.fxml");
         TextCinematicController.play(Scenes.B_Scene1);
 
         stage.setResizable(true);

@@ -44,12 +44,7 @@ public class YearsLaterController extends Controller{
         }
         TextCinematicController.setTextSpeed(delay);
         TextCinematicController.play(text, this.yearsLaterText);
-        this.centerText();
         this.callback = callback;
-    }
-
-    private void centerText() {
-        this.yearsLaterText.setY((Main.HEIGHT - this.yearsLaterText.getLayoutBounds().getHeight()) / 2);
     }
 
     @FXML

@@ -62,9 +62,8 @@ public class TableBuilderSceneController extends Controller {
         private boolean isDialogOpen = false, endDialog = false, wasDialogOpen = false;
         private int dialogIndex = 0;
         private final List<String> dialogList = List.of(
-                "Argh.. C'est n'importe quoi ce manuel, on voit pas le bon côté...",
-                "Comment ça se fait que j’arrive pas à dépasser les suédois ? J’ai pourtant fait le meuble en moins de 4 minutes...",
-                "Je réessayerai une autre fois"
+                "Allez, je vais y arriver ! Plus que 2 pieds..",
+                "Ça y est !"
         );
 
     @FXML
@@ -180,15 +179,28 @@ public class TableBuilderSceneController extends Controller {
         System.out.println("=======");
         checkIsOnTargetByIndex(index);
         if (mobelLayout.isLayoutFilled()) {
-            // TODO : show dialog
+            endDialog = true;
+            isDialogOpen = true;
+            draggable_dialog.setVisible(true);
+            draggable_dialog.setDisable(false);
+            TextCinematicController.play(dialogList.get(dialogIndex), dialog);
+            dialogIndex += 1;
         }
-
-        // Put the immovable piece to front at all time
-        draggablePane2.toFront();
     }
 
     private void checkIsOnTargetByIndex(int index) {
         if (mobelLayout.getMobelComponents().get(index).isOnTarget()) {
+
+            if(mobelLayout.getMobelComponents().stream().filter(MobelComponent::isOnTarget).count() == 3
+                && !wasDialogOpen){
+                isDialogOpen = true;
+                wasDialogOpen = true;
+                draggable_dialog.setVisible(true);
+                draggable_dialog.setDisable(false);
+                TextCinematicController.play(dialogList.get(dialogIndex), dialog);
+                dialogIndex += 1;
+            }
+
             // Change to glowing image because it's in the right place
             switch (index) {
                 case 0 -> {
@@ -314,7 +326,7 @@ public class TableBuilderSceneController extends Controller {
     public void dialogOnMouseClicked(MouseEvent mouseEvent) {
 
         if (dialogIndex >= dialogList.size()){
-            this.pageFlip((Group) Scenes.TableBuilderScene.getRoot(), Scenes.ChairBuilderScene);
+            this.pageFlip((Group) Scenes.TableBuilderScene.getRoot(), Scenes.B_Scene2);
             return;
         }
 
