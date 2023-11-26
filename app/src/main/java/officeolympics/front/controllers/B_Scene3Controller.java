@@ -4,6 +4,7 @@ import javafx.fxml.FXML;
 import javafx.scene.Group;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
+import javafx.scene.layout.HBox;
 import javafx.scene.text.Text;
 import officeolympics.front.scenes.SceneLoader;
 import officeolympics.front.scenes.Scenes;
@@ -18,6 +19,9 @@ public class B_Scene3Controller extends Controller{
 
     private final Map<Integer, List<String>> imagesToText = Map.of(
             0, List.of(
+                    "Le tiroir est rempli de ces exemplaires à 4 pages !!!"
+            ),
+            1, List.of(
                     "En rentrant chez lui, Stanley compara leurs manuels et celui qu’on lui a donné pour l’épreuve.",
                     "Pour le même meuble SMÖRBOLL, leurs manuels sont beaucoup moins compliqués.",
                     "*Il a donc 4 ans pour se procurer des manuels suédois des autres meubles afin de les battre à la prochaine édition.*"
@@ -25,11 +29,13 @@ public class B_Scene3Controller extends Controller{
     );
 
     private final List<String> images = List.of(
+            "alex_found.png",
             "livrets.png"
     );
 
     @FXML
     public ImageView image;
+    public HBox hbox;
 
     private int index = 0;
     private int indexText = 0;

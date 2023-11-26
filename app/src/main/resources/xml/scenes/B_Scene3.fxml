@@ -5,16 +5,20 @@
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.text.*?>
 
-<AnchorPane prefHeight="720.0" prefWidth="1280.0" style="-fx-background-color: rgb(255, 255, 255);" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="officeolympics.front.controllers.B_Scene3Controller">
+<AnchorPane maxHeight="445.0" maxWidth="1230.0" prefHeight="445.0" prefWidth="1230.0" style="-fx-background-color: rgb(255, 255, 255);" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="officeolympics.front.controllers.B_Scene3Controller">
     <children>
-        <ImageView fx:id="image" fitHeight="445.0" fitWidth="1230.0" layoutX="25" layoutY="32" pickOnBounds="true" preserveRatio="true" AnchorPane.bottomAnchor="250.0" AnchorPane.leftAnchor="25.0" AnchorPane.rightAnchor="25.0" AnchorPane.topAnchor="25.0">
-            <image>
-                <Image url="@/images/livrets.png" />
-            </image>
-        </ImageView>
+        <HBox fx:id="hbox" alignment="CENTER" disable="true" layoutX="25.0" layoutY="32.0" prefHeight="445.0" prefWidth="1230.0" AnchorPane.bottomAnchor="225.0" AnchorPane.leftAnchor="25.0" AnchorPane.rightAnchor="25.0" AnchorPane.topAnchor="25.0">
+            <children>
+                <ImageView fx:id="image" fitHeight="445.0" fitWidth="1230.0" pickOnBounds="true" preserveRatio="true">
+                    <image>
+                        <Image url="@/images/alexFound.png" />
+                    </image>
+                </ImageView>
+            </children>
+        </HBox>
         <BorderPane onMouseClicked="#handlePaneMouseClicked" prefHeight="200.0" prefWidth="200.0" style="-fx-border-color: black; -fx-border-width: 1; -fx-border-radius: 10;" AnchorPane.bottomAnchor="25.0" AnchorPane.leftAnchor="25.0" AnchorPane.rightAnchor="25.0">
             <center>
-                <Text id="text-cinematic" fx:id="paragraph" strokeType="OUTSIDE" strokeWidth="0.0" text="En rentrant chez lui, Stanley compara leurs manuels et celui qu’on lui a donné pour l’épreuve." wrappingWidth="1200.0" BorderPane.alignment="CENTER">
+                <Text id="text-cinematic" fx:id="paragraph" strokeType="OUTSIDE" strokeWidth="0.0" text="Le tiroir est rempli de ces exemplaires à 4 pages !!!" wrappingWidth="1150.0" BorderPane.alignment="CENTER">
                     <font>
                         <Font name="IKEASans-Heavy" size="24.0" />
                     </font>

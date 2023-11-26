@@ -1,11 +1,13 @@
 package officeolympics.front.controllers;
 
 import javafx.fxml.FXML;
+import javafx.scene.Group;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.Pane;
+import officeolympics.front.scenes.Scenes;
 
 public class DrawersController extends Controller {
     @FXML
@@ -35,7 +37,7 @@ public class DrawersController extends Controller {
             case 3 -> {
                 fourthDrawerClicked();
                 count = 0;
-                // TODO here : do whatever happens when we open the drawer containing the manuals
+                this.pageFlip((Group) Scenes.DrawersScene.getRoot(), Scenes.B_Scene3);
             }
         }
     }

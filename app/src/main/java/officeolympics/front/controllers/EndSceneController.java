@@ -6,6 +6,7 @@ import javafx.scene.Group;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
 import javafx.util.Duration;
+import officeolympics.front.animation.FadeInTransition;
 import officeolympics.front.scenes.SceneLoader;
 import officeolympics.front.scenes.Scenes;
 
@@ -24,11 +25,12 @@ public class EndSceneController extends Controller {
             this.image.setImage(Scenes.getImage("podium.png"));
         }
         this.image.setOpacity(0);
-        FadeTransition FT = new FadeTransition(Duration.millis(5000), this.image);
-        FT.setToValue(1);
-        FT.setCycleCount(1);
-        FT.setAutoReverse(false);
-        FT.playFromStart();
+        FadeInTransition.playFromStartOn(this.image, Duration.millis(5000));
+        if(this.gif.getImage() == null){
+            this.gif.setImage(Scenes.getImage("podium.gif"));
+        }
+        this.gif.setOpacity(0);
+        FadeInTransition.playFromStartOn(this.gif, Duration.millis(5000));
     }
 
     public void handleMouseButtonClicked(MouseEvent mouseEvent) {
