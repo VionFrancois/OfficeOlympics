@@ -13,9 +13,11 @@ import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.BorderPane;
 import javafx.scene.layout.Pane;
 import javafx.scene.text.Text;
+import officeolympics.Main;
 import officeolympics.back.mobels.MobelComponent;
 import officeolympics.back.mobels.MobelComponentLocation;
 import officeolympics.back.mobels.MobelLayout;
+import officeolympics.front.scenes.SceneLoader;
 import officeolympics.front.scenes.Scenes;
 
 import java.util.ArrayList;
@@ -238,7 +240,13 @@ public class AlexDoorSceneController extends Controller {
     public void dialogOnMouseClicked(MouseEvent mouseEvent) {
 
         if (dialogIndex >= dialogList.size()){
-            this.pageFlip((Group) Scenes.AlexDoorScene.getRoot(), Scenes.TableBuilderScene);
+            Scenes.YearsLaterScene = SceneLoader.load("YearsLaterScene.fxml");
+
+            this.pageFlip((Group) Scenes.AlexDoorScene.getRoot(), Scenes.YearsLaterScene);
+            TextCinematicController.setDelayBefore(2500);
+            TextCinematicController.setTextSpeed(100);
+            TextCinematicController.play(Scenes.YearsLaterScene);
+
             return;
         }
 

@@ -15,7 +15,7 @@ import java.util.concurrent.locks.ReentrantLock;
  */
 public class TextCinematicController extends Controller{
 
-    private static final int TEXT_SPEED = 35;
+    private static int TEXT_SPEED = 35;
 
     private static final int TEXT_DELAY = 500;
 
@@ -84,6 +84,9 @@ public class TextCinematicController extends Controller{
 
     public static void setDelayBefore(int delay){
         TEXT_DELAY_BEFORE = delay;
+    }
+    public static void setTextSpeed(int delay){
+        TEXT_SPEED = delay;
     }
 
     public static boolean isRunning() {
