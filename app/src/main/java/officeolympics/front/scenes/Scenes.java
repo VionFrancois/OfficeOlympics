@@ -24,7 +24,8 @@ public class Scenes {
             B_Scene3,
             Page1Scene,
             AlexDoorScene,
-            TableBuilderScene;
+            TableBuilderScene,
+            DrawersScene;
 
     public static Image getImage(String name) {
         return new Image(Objects.requireNonNull(Main.class.getResourceAsStream("/images/" + name)));
