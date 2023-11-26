@@ -32,9 +32,10 @@ public class DrawersController extends Controller {
             }
             case 3 -> {
                 fourthDrawerClicked();
-                count = 0;
+                count = -1;
                 this.pageFlip((Group) Scenes.DrawersScene.getRoot(), Scenes.B_Scene3);
             }
+            case -1 -> {}
         }
     }
 
