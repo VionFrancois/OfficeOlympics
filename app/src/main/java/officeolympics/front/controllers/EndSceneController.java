@@ -15,6 +15,8 @@ public class EndSceneController extends Controller {
 
     @FXML
     public ImageView image;
+    @FXML
+    public ImageView gif;
 
     @FXML
     void initialize(){

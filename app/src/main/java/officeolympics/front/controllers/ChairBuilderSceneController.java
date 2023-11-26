@@ -404,7 +404,7 @@ public class ChairBuilderSceneController extends Controller {
     public void dialogOnMouseClicked(MouseEvent mouseEvent) {
 
         if (dialogIndex >= dialogList.size()){
-            Scenes.EndScreenScene = SceneLoader.load("EndScene.fxml");
+            Scenes.EndScreenScene = SceneLoader.load("EndScreenScene.fxml");
             this.pageFlip((Group) Scenes.ChairBuilderScene.getRoot(), Scenes.EndScreenScene);
             return;
         }
@@ -430,7 +430,7 @@ public class ChairBuilderSceneController extends Controller {
     @FXML
     private void cheatCode(MouseEvent event) {
         if (event.getButton().toString().equals("MIDDLE")) {
-            Scenes.EndScreenScene = SceneLoader.load("EndScene.fxml");
+            Scenes.EndScreenScene = SceneLoader.load("EndScreenScene.fxml");
             this.pageFlip((Group) Scenes.ChairBuilderScene.getRoot(), Scenes.EndScreenScene);
         }
     }
