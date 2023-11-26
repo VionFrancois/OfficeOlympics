@@ -21,7 +21,7 @@ public class EndScene2Controller extends Controller {
         if (this.image.getImage() == null) {
             this.image.setImage(Scenes.getImage("debt.png"));
         }
-        TextCinematicController.play("Enfin, la fin du reigne de la Suede.", this.paragraph);
+        TextCinematicController.play("Han tog sin hämnd och visade för hela världen svenskarnas bedrägeri.", this.paragraph);
     }
 
     @FXML

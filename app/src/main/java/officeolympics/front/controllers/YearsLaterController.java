@@ -22,9 +22,9 @@ public class YearsLaterController extends Controller{
     void initialize() {
         this.yearsLaterText.setText("6 months later...");
         this.callback = (e) -> {
-            this.animateText("Il est l'heure de montrer au monde mon experience.", 35, 300,
+            this.animateText("Det är dags att visa världen min kunskap.", 35, 300,
                     (e2) -> {
-                    this.animateText("Début de l’épreuve, 1 meuble à monter le plus vite possible.", 20, 200);
+                    this.animateText("Start of first trial, 1 furniture to build the fastest possible.", 20, 200);
                     return null;
                 });
             return null;

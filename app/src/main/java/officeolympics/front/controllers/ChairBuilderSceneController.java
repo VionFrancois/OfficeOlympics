@@ -73,8 +73,8 @@ public class ChairBuilderSceneController extends Controller {
     private boolean isDialogOpen = false, endDialog = false, wasDialogOpen = false;
     private int dialogIndex = 0;
     private final List<String> dialogList = List.of(
-            "Hahaha, c'est tout de suite plus simple...",
-            "Ce manuel est genial !"
+            "Hahaha, det är omedelbart enklare...",
+            "Denna handbok är utmärkt !"
     );
 
     private MobelComponent mobelComponent1, mobelComponent2, mobelComponent3, mobelComponent4, mobelComponent5, mobelComponent6, mobelComponent7, mobelComponent8;
