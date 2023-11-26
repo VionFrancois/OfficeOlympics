@@ -35,6 +35,7 @@ public class DrawersController extends Controller {
             case 3 -> {
                 fourthDrawerClicked();
                 count = 0;
+                // TODO here : do whatever happens when we open the drawer containing the manuals
             }
         }
     }
