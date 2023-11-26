@@ -39,6 +39,7 @@ public class Main extends Application {
         Scenes.B_Scene1 = SceneLoader.load("B_Scene1.fxml");
         Scenes.B_Scene2 = SceneLoader.load("B_Scene2.fxml");
         Scenes.B_Scene3 = SceneLoader.load("B_Scene3.fxml");
+        Scenes.DrawersScene = SceneLoader.load("DrawersScene.fxml");
         TextCinematicController.play(Scenes.B_Scene1);
 
         stage.setResizable(true);
