@@ -16,15 +16,15 @@ public class B_Scene2Controller extends Controller{
     public Text paragraph;
 
     private final Map<Integer, List<String>> imagesToText = Map.of(
-            0, List.of("Jag förstår inte... Hur vinner de alltid ?"),
+            0, List.of("Je ne comprends pas... Comment font-ils pour toujours gagner ?"),
             1, List.of(
-                    "*När Stanley gick in i omklädningsrumskorridoren såg Stanley en manual ligga nära den svenska dörren.*",
-                    "*Han kände igen det direkt, det var uppenbarligen SMÖRBOLL, möbeln han precis byggt till OS.*",
-                    "*Men han märkte något speciellt.*"
+                    "*En rentrant dans le couloir des vestiaires, Stanley aperçut un manuel qui trainait près de la porte des suédois.*",
+                    "*Il le reconnut tout de suite, il s’agit bien évidemment de SMÖRBOLL, le meuble qu’il vient de construire pour les JO.*",
+                    "*Mais il remarqua quelque chose de spécial.*"
             ),
             2, List.of(
-                    "Men det är bara 4 sidor? Hur är det möjligt ?",
-                    "*För att ta reda på det gick Stanley till det svenska omklädningsrummet när alla hade gått.*"
+                    "Mais, il ne fait que 4 pages ? Comment est-ce possible ?",
+                    "Pour en avoir le coeur net, Stanley se rendit dans le vestiaire des suédois une fois tout le monde parti."
             )
     );
 

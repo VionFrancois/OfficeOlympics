@@ -18,7 +18,7 @@
         </HBox>
         <BorderPane onMouseClicked="#handlePaneMouseClicked" prefHeight="200.0" prefWidth="200.0" style="-fx-border-color: black; -fx-border-width: 1; -fx-border-radius: 10;" AnchorPane.bottomAnchor="25.0" AnchorPane.leftAnchor="25.0" AnchorPane.rightAnchor="25.0">
             <center>
-                <Text id="text-cinematic" fx:id="paragraph" strokeType="OUTSIDE" strokeWidth="0.0" text="Lådan är full av dessa 4-sidiga kopior!!!" wrappingWidth="1150.0" BorderPane.alignment="CENTER">
+                <Text id="text-cinematic" fx:id="paragraph" strokeType="OUTSIDE" strokeWidth="0.0" text="Le tiroir est rempli de ces exemplaires à 4 pages !!!" wrappingWidth="1150.0" BorderPane.alignment="CENTER">
                     <font>
                         <Font name="IKEASans-Heavy" size="24.0" />
                     </font>

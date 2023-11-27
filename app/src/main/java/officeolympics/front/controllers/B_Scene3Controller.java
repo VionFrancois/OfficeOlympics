@@ -19,12 +19,12 @@ public class B_Scene3Controller extends Controller{
 
     private final Map<Integer, List<String>> imagesToText = Map.of(
             0, List.of(
-                    "Lådan är full av dessa 4-sidiga kopior!!!"
+                    "Le tiroir est rempli de ces exemplaires à 4 pages !!!"
             ),
             1, List.of(
-                    "*När han kom hem jämförde Stanley deras läroböcker och den han fick för provet.*",
-                    "För samma SMÖRBOLL-möbler är deras manualer mycket mindre komplicerade.",
-                    "*Han har därför 4 år på sig att skaffa svenska manualer för andra möbler för att slå dem i nästa upplaga.*"
+                    "En rentrant chez lui, Stanley compara leurs manuels et celui qu’on lui a donné pour l’épreuve.",
+                    "Pour le même meuble SMÖRBOLL, leurs manuels sont beaucoup moins compliqués.",
+                    "*Il a donc 4 ans pour se procurer des manuels suédois des autres meubles afin de les battre à la prochaine édition.*"
             )
     );
 

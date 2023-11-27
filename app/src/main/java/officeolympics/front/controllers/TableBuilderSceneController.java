@@ -62,8 +62,8 @@ public class TableBuilderSceneController extends Controller {
         private boolean isDialogOpen = false, endDialog = false, wasDialogOpen = false;
         private int dialogIndex = 0;
         private final List<String> dialogList = List.of(
-                "Kom igen, jag kommer dit! Mer än 2 fot..",
-                "Det är allt !"
+                "Allez, je vais y arriver ! Plus que 2 pieds..",
+                "Ça y est !"
         );
 
     @FXML

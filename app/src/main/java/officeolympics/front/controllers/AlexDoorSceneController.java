@@ -52,9 +52,9 @@ public class AlexDoorSceneController extends Controller {
     private boolean isDialogOpen = false, endDialog = false, wasDialogOpen = false;
     private int dialogIndex = 0;
     private final List<String> dialogList = List.of(
-            "Argh.. Den här manualen är skräp, vi kan inte se den goda sidan....",
-            "Raaaah, fortfarande inte bäst...",
-            "Jag försöker igen en annan gång..."
+            "Argh.. C'est n'importe quoi ce manuel, on voit pas le bon côté...",
+            "Comment ça se fait que j’arrive pas à dépasser les suédois ? J’ai pourtant fait le meuble en moins de 4 minutes...",
+            "Je réessayerai une autre fois..."
     );
 
     private MobelComponent mobelComponent1, mobelComponent2;

@@ -14,7 +14,7 @@
       </ImageView>
       <BorderPane onMouseClicked="#handlePaneMouseClicked" prefHeight="200.0" prefWidth="200.0" style="-fx-border-color: black; -fx-border-width: 1; -fx-border-radius: 10;" AnchorPane.bottomAnchor="25.0" AnchorPane.leftAnchor="25.0" AnchorPane.rightAnchor="25.0">
          <center>
-            <Text id="text-cinematic" fx:id="paragraph" strokeType="OUTSIDE" strokeWidth="0.0" text="Sverige har blivit en av de största globala makterna, i synnerhet har IKEA överträffat alla de mest kända företagen som Google, Microsoft eller Odoo." wrappingWidth="1200.0" BorderPane.alignment="CENTER">
+            <Text id="text-cinematic" fx:id="paragraph" strokeType="OUTSIDE" strokeWidth="0.0" text="La suède est devenue l’une des plus grandes puissances mondiales, en particulier, IKEA a dépassé de loin toutes les entreprises les plus renommées comme Google, Microsoft ou Odoo. " wrappingWidth="1200.0" BorderPane.alignment="CENTER">
                <font>
                   <Font name="IKEASans-Heavy" size="24.0" />
                </font>

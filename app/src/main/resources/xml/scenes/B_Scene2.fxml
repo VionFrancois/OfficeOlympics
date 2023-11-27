@@ -18,7 +18,7 @@
       </ImageView>
       <BorderPane onMouseClicked="#handlePaneMouseClicked" prefHeight="200.0" prefWidth="200.0" style="-fx-border-color: black; -fx-border-width: 1; -fx-border-radius: 10;" AnchorPane.bottomAnchor="25.0" AnchorPane.leftAnchor="25.0" AnchorPane.rightAnchor="25.0">
          <center>
-            <Text id="text-cinematic" fx:id="paragraph" strokeType="OUTSIDE" strokeWidth="0.0" text="Jag förstår inte... Hur vinner de alltid ?" wrappingWidth="1200.0" BorderPane.alignment="CENTER">
+            <Text id="text-cinematic" fx:id="paragraph" strokeType="OUTSIDE" strokeWidth="0.0" text="Je ne comprends pas… Comment font-ils pour toujours gagner ?" wrappingWidth="1200.0" BorderPane.alignment="CENTER">
                <font>
                   <Font name="IKEASans-Heavy" size="24.0" />
                </font>

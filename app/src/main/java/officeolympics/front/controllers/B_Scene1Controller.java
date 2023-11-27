@@ -15,9 +15,9 @@ public class B_Scene1Controller extends Controller {
     public Text paragraph;
 
     private final List<String> texts = List.of(
-            "Sverige har blivit en av de största globala makterna, i synnerhet har IKEA överträffat alla de mest kända företagen som Google, Microsoft eller Odoo.",
-            "Den världsberömda möbeltillverkaren har blivit huvudsponsor för de olympiska spelen. Faktum är att evenemang är tillägnade dem och hälften av platserna kan bara bokas med ett IKEA familjekort.",
-            "Stanley, juniorutvecklare på Odoo, tränar hårt för att vinna nästa upplaga."
+            "La suède est devenue l’une des plus grandes puissances mondiales, en particulier, IKEA a dépassé de loin toutes les entreprises les plus renommées comme Google, Microsoft ou Odoo.",
+            "Le fabricant de meuble mondialement reconnu est devenu le sponsor principal des JO. En effet, des épreuves leurs sont dédiées et la moitié des places ne sont réservables qu’avec une carte IKEA family.",
+            "Stanley, développeur junior chez Odoo, s’entraîne d’arrache pied pour gagner cette prochaine édition."
     );
 
     private final List<String> images = List.of(
